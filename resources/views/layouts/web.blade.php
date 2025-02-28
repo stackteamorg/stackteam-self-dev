@@ -14,12 +14,12 @@
     <!-- CSS
 	============================================ -->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/slick.css">
-    <link rel="stylesheet" href="assets/css/plugins/font-awesome.css">
-    <link rel="stylesheet" href="assets/css/plugins/icomoon.css">
-    <link rel="stylesheet" href="assets/css/plugins/plugins.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -243,339 +243,7 @@
         <!-- End Popup Mobile Menu -->
         <!-- Start Page Wrapper -->
         <main class="page-wrappper">
-
-            <!-- Start Slider Area -->
-            <div class="axil-slider-area axil-slide-activation">
-                <!-- Start Single Slide -->
-                <div class="axil-slide slide-style-4 theme-gradient-4 slider-fixed-height d-flex align-items-center">
-                    <div class="container pt--80 pt_sm--40 pt_md--40">
-                        <div class="row align-items-center">
-                            <div class="col-lg-8 col-12 order-2 order-lg-1 mt_md--40 mt_sm--30">
-                                <div class="content">
-                                    <h1 class="axil-display-1 layer1 wow slideFadeInUp" data-wow-duration="1s" data-wow-delay="500ms">Think the design, design the thinking.</h1>
-                                    <p class="layer2 wow slideFadeInUp" data-wow-duration="1s" data-wow-delay="800ms">
-                                        Create live segments and target the right people for messages based on
-                                        their
-                                        behaviors.</p>
-                                    <div class="slider-button wow slideFadeInUp" data-wow-duration="1s" data-wow-delay="1300ms">
-                                        <a class="axil-button btn-large btn-solid btn-extra07-color" href="home-04.html#">
-                                            <span class="button-text">See Our Projects</span>
-                                            <span class="button-icon"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2">
-                                <div class="thumbnail d-flex">
-                                    <div class="image image-one">
-                                        <img class="paralax-image" src="assets/images/slider/slider-01.png" alt="Slider Images">
-                                    </div>
-                                    <div class="image image-two">
-                                        <img class="paralax-image" src="assets/images/slider/slider-02.png" alt="Slider Images">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 order-3 order-lg-3">
-                                <div class="follow-us">
-                                    <ul class="social-share social-share-style-2">
-                                        <li><a href="home-04.html#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-                                        <li><a href="home-04.html#"><i class="fab fa-x-twitter"></i><span>twitter</span></a></li>
-                                        <li><a href="home-04.html#"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Slide -->
-            </div>
-            <!-- End Slider Area -->
-
-            <!-- Start Case Study Area -->
-            <div class="axil-case-study-area ax-section-gap bg-color-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title text-start">
-                                <span class="sub-title extra10-color wow" data-splitting>our projects</span>
-                                <h2 class="title wow"><span>Some of our finest work.</span></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row--45">
-                        <!-- Start Single Case Study  -->
-                        <div class="col-lg-12 col-12">
-                            <div class="axil-case-study with-mokup-images theme-gradient-5 move-up wow">
-                                <div class="content">
-                                    <div class="inner">
-                                        <span class="category wow" data-splitting>branding, design</span>
-                                        <h4 class="wow title" data-splitting><a href="single-case-study.html">Godaddy-
-                                                Online platform and website design</a></h4>
-                                    </div>
-                                </div>
-                                <div class="mockup">
-                                    <img class="paralax-image w-100" src="assets/images/about/mokup.png" alt="Mokup Imags">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Case Study  -->
-
-                        <!-- Start Single Case Study  -->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="axil-case-study move-up wow">
-                                <div class="thumbnail">
-                                    <a href="single-case-study.html">
-                                        <img class="w-100 paralax-image" src="assets/images/portfolio/case-stydy-01.jpg" alt="Axil Case Study Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="inner">
-                                        <span class="category wow" data-splitting>ios, design</span>
-                                        <h4 class="wow title" data-splitting><a href="single-case-study.html">Archi- Online platform and website design</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Case Study  -->
-
-                        <!-- Start Single Case Study  -->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="axil-case-study move-up wow">
-                                <div class="thumbnail">
-                                    <a href="single-case-study.html">
-                                        <img class="w-100 paralax-image" src="assets/images/portfolio/case-stydy-02.jpg" alt="Axil Case Study Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="inner">
-                                        <span class="category wow" data-splitting>ios, design</span>
-                                        <h4 class="wow title" data-splitting><a href="single-case-study.html">Cynic- Responsive wordpress theme
-                                                design</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Case Study  -->
-
-                        <!-- Start Single Case Study  -->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="axil-case-study move-up wow">
-                                <div class="thumbnail">
-                                    <a href="single-case-study.html">
-                                        <img class="w-100 paralax-image" src="assets/images/portfolio/case-stydy-07.jpg" alt="Axil Case Study Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="inner">
-                                        <span class="category wow" data-splitting>ios, design</span>
-                                        <h4 class="wow title" data-splitting><a href="single-case-study.html">Kryptova - ICO Landing Page, ICO Bitcoin</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Case Study  -->
-
-                        <!-- Start Single Case Study  -->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="axil-case-study move-up wow">
-                                <div class="thumbnail">
-                                    <a href="single-case-study.html">
-                                        <img class="w-100 paralax-image" src="assets/images/portfolio/case-stydy-08.jpg" alt="Axil Case Study Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="inner">
-                                        <span class="category wow" data-splitting>ios, design</span>
-                                        <h4 class="wow title" data-splitting><a href="single-case-study.html">Papr-Online
-                                                platform and website design</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Case Study  -->
-                    </div>
-                </div>
-            </div>
-            <!-- End Case Study Area -->
-
-            <!-- Start Testimonial Area -->
-            <div class="axil-testimonial-area ax-section-gap bg-color-lightest">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title text-center">
-                                <span class="sub-title extra05-color wow" data-splitting>testimonials</span>
-                                <h2 class="title wow" data-splitting>From getting started</h2>
-                                <p class="subtitle-2 wow" data-splitting>In vel varius turpis, non dictum sem. Aenean in
-                                    efficitur ipsum, in
-                                    egestas ipsum. Mauris in mi ac tellus.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-activation">
-                        <div class="row axil-testimonial-single">
-                            <!-- Start Single Testimonial -->
-                            <div class="col-lg-6 mt--60">
-                                <div class="axil-testimonial testimonial active move-up wow">
-                                    <div class="inner">
-                                        <div class="clint-info-wrapper">
-                                            <div class="thumb">
-                                                <img src="assets/images/testimonial/client-01.jpg" alt="Clint Images">
-                                            </div>
-                                            <div class="client-info">
-                                                <h4 class="title">Martha Maldonado</h4>
-                                                <span>Executive Chairman @ Google</span>
-                                            </div>
-                                        </div>
-                                        <div class="description">
-                                            <p class="subtitle-3">Donec metus lorem, vulputate at sapien sit amet,
-                                                auctor
-                                                iaculis lorem. In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                                            <a class="axil-link-button" href="home-04.html#">Read Project Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Testimonial -->
-
-                            <!-- Start Single Testimonial -->
-                            <div class="col-lg-6 mt--60">
-                                <div class="axil-testimonial axil-control testimonial move-up wow">
-                                    <div class="inner">
-                                        <div class="clint-info-wrapper">
-                                            <div class="thumb">
-                                                <img src="assets/images/testimonial/client-02.jpg" alt="Clint Images">
-                                            </div>
-                                            <div class="client-info">
-                                                <h4 class="title">Martha Maldonado</h4>
-                                                <span>Executive Chairman @ Google</span>
-                                            </div>
-                                        </div>
-                                        <div class="description">
-                                            <p class="subtitle-3">Donec metus lorem, vulputate at sapien sit amet,
-                                                auctor
-                                                iaculis lorem. In vel hendrerit nisi. Vestibulum eget risus velit.</p>
-                                            <a class="axil-link-button" href="home-04.html#">Read Project Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Testimonial -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Testimonial Area -->
-
-            <!-- Start Brand Area -->
-            <div class="axil-brand-area ax-section-gap bg-color-white">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-12 col-12">
-                            <div class="section-title">
-                                <span class="sub-title extra06-color wow" data-splitting>clients</span>
-                                <h2 class="title wow" data-splitting>I’ve built solutions for...</h2>
-                                <p class="subtitle-2 wow" data-splitting>Nulla facilisi. Nullam in magna id dolor
-                                    blandit
-                                    rutrum eget.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-12 col-12">
-                            <div class="axil-brand-logo-wrapper mt_md--30 mt_sm--30">
-                                <ul class="brand-list liststyle d-flex flex-wrap justify-content-center">
-                                    <li><a href="home-04.html#">
-                                            <img src="assets/images/brand/brand-01.png" alt="Brand Logo Images">
-                                        </a></li>
-                                    <li><a href="home-04.html#">
-                                            <img src="assets/images/brand/brand-02.png" alt="Brand Logo Images">
-                                        </a></li>
-                                    <li><a href="home-04.html#">
-                                            <img src="assets/images/brand/brand-03.png" alt="Brand Logo Images">
-                                        </a></li>
-                                    <li><a href="home-04.html#">
-                                            <img src="assets/images/brand/brand-04.png" alt="Brand Logo Images">
-                                        </a></li>
-                                    <li><a href="home-04.html#">
-                                            <img src="assets/images/brand/brand-05.png" alt="Brand Logo Images">
-                                        </a></li>
-                                    <li><a href="home-04.html#">
-                                            <img src="assets/images/brand/brand-06.png" alt="Brand Logo Images">
-                                        </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Brand Area -->
-
-            <!-- Start Blog Area -->
-            <div class="axil-blog-area ax-section-gap bg-color-lightest">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title text-center">
-                                <span class="sub-title extra04-color">what's going on</span>
-                                <h2 class="title">Latest stories</h2>
-                                <p class="subtitle-2">In vel varius turpis, non dictum sem. Aenean in efficitur ipsum,
-                                    in
-                                    egestas ipsum. Mauris in mi ac tellus.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row blog-list-wrapper mt--20">
-                        <!-- Start Blog Area -->
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="axil-blog axil-control mt--40 active move-up wow">
-                                <div class="content">
-                                    <div class="content-wrap paralax-image">
-                                        <div class="inner">
-                                            <span class="category">Lifestyle</span>
-                                            <h5 class="title"><a href="blog-details.html">Choosing the right features
-                                                    for
-                                                    your custom</a></h5>
-                                            <p>Quisque eget erat augue. Cras gravida enim nulla, a dictum erat fringilla
-                                                at.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="thumbnail">
-                                    <div class="image">
-                                        <img src="assets/images/blog/blog-01.jpg" alt="Blog images">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Blog Area -->
-
-                        <!-- Start Blog Area -->
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="axil-blog axil-control mt--40 move-up wow">
-                                <div class="content">
-                                    <div class="content-wrap paralax-image">
-                                        <div class="inner">
-                                            <span class="category">Lifestyle</span>
-                                            <h5 class="title"><a href="blog-details.html">Choosing the right features
-                                                    for
-                                                    your custom</a></h5>
-                                            <p>Quisque eget erat augue. Cras gravida enim nulla, a dictum erat fringilla
-                                                at.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="thumbnail">
-                                    <div class="image">
-                                        <img src="assets/images/blog/blog-02.jpg" alt="Blog images">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Blog Area -->
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog Area -->
+            {{ $slot }}
         </main>
         <!-- End Page Wrapper -->
 
@@ -761,34 +429,34 @@
 ============================================ -->
 
     <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr.min.js"></script>
+    <script src="{{ asset('assets/js/vendor/modernizr.min.js') }}"></script>
     <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="{{ asset('assets/js/vendor/jquery.js') }}"></script>
     <!-- Bootstrap JS -->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/counterup.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/tilt.js"></script>
-    <script src="assets/js/anime.js"></script>
-    <script src="assets/js/tweenmax.js"></script>
-    <script src="assets/js/slipting.js"></script>
-    <script src="assets/js/scrollmagic.js"></script>
-    <script src="assets/js/addindicators.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/youtube.js"></script>
-    <script src="assets/js/countdown.js"></script>
-    <script src="assets/js/scrollup.js"></script>
-    <script src="assets/js/stickysidebar.js"></script>
-    <script src="assets/js/js.cookie.js"></script>
-    <script src="assets/js/jquery.style.switcher.js"></script>
-    <script src="assets/js/contactform.js"></script>
+    <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/counterup.js') }}"></script>
+    <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/tilt.js') }}"></script>
+    <script src="{{ asset('assets/js/anime.js') }}"></script>
+    <script src="{{ asset('assets/js/tweenmax.js') }}"></script>
+    <script src="{{ asset('assets/js/slipting.js') }}"></script>
+    <script src="{{ asset('assets/js/scrollmagic.js') }}"></script>
+    <script src="{{ asset('assets/js/addindicators.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.js') }}"></script>
+    <script src="{{ asset('assets/js/youtube.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.js') }}"></script>
+    <script src="{{ asset('assets/js/scrollup.js') }}"></script>
+    <script src="{{ asset('assets/js/stickysidebar.js') }}"></script>
+    <script src="{{ asset('assets/js/js.cookie.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.style.switcher.js') }}"></script>
+    <script src="{{ asset('assets/js/contactform.js') }}"></script>
     <!-- Plugins JS -->
-    <script src="assets/js/plugins/plugins.min.js"></script>
+    <script src="{{ asset('assets/js/plugins/plugins.min.js') }}"></script>
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
 
