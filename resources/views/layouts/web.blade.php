@@ -114,7 +114,7 @@
                                 <!-- Start Mainmanu Nav -->
                                 <nav class="mainmenu-nav d-none d-lg-block">
                                     <ul class="mainmenu">
-                                        <li class="has-dropdown"><a href="home-04.html#">Home</a>
+                                        <li class="has-dropdown"><a href="home-04.html#">{{ __('taas.menu.home') }}</a>
                                             <ul class="axil-submenu">
                                                 <li><a href="home-01.html">Digital Agency</a></li>
                                                 <li><a href="home-02.html">Creative Agency</a></li>
@@ -123,14 +123,8 @@
                                                 <li><a href="home-05.html">Corporate Agency</a></li>
                                             </ul>
                                         </li>
-                                        <li class="has-dropdown"><a href="home-04.html#">Services</a>
-                                            <ul class="axil-submenu">
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="service-two.html">Services Two</a></li>
-                                                <li><a href="single-service.html">Services Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About Us</a></li>
+                                        <x-language-bar />
+                                        <li><a href="{{ route('blog.index',App::currentLocale()) }}">{{ __('taas.menu.blog') }}</a></li>
                                         <li class="has-dropdown"><a href="home-04.html#">Blog</a>
                                             <ul class="axil-submenu">
                                                 <li><a href="blog.html">Blog List</a></li>
@@ -160,6 +154,7 @@
                                     </ul>
                                 </nav>
                                 <!-- End Mainmanu Nav -->
+
                                 <!-- Start Hamburger -->
                                 <div class="ax-header-button ml--40 ml_lg--10 d-none d-sm-block">
                                     <a class="axil-button btn-solid btn-extra02-color" href="home-04.html#"><span class="button-text">Let's Talk</span><span class="button-icon"></span></a>
