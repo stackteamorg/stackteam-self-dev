@@ -24,10 +24,10 @@
                     <div class="col-lg-4 order-1 order-lg-2">
                         <div class="thumbnail d-flex">
                             <div class="image image-one">
-                                <img class="paralax-image" src="assets/images/slider/slider-01.png" alt="Slider Images">
+                                <img class="paralax-image" src="{{ asset('assets/images/slider/slider-01.png') }}" alt="Slider Images">
                             </div>
                             <div class="image image-two">
-                                <img class="paralax-image" src="assets/images/slider/slider-02.png" alt="Slider Images">
+                                <img class="paralax-image" src="{{ asset('assets/images/slider/slider-02.png') }}" alt="Slider Images">
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
             <div class="col-lg-6 col-xl-6">
                 <div class="thumbnail">
                     <div class="image">
-                        <img src="assets/images/team/team-group.png" alt="Team Images">
+                        <img src="{{ asset('assets/images/team/team-group.png') }}" alt="Team Images">
                     </div>
                     <div class="total-team-button">
                         <a href="team.html"><span>20+</span></a>
@@ -113,7 +113,7 @@
             <div class="col-lg-4 col-md-6 col-12 mt--90 mt_md--40 mt_sm--30">
                 <div class="axil-service-style--3 move-up wow animate" style="opacity: 0; visibility: visible;">
                     <div class="icon">
-                        <img src="assets/images/icons/layer.svg" alt="Icon Images">
+                        <img src="{{ asset('assets/images/icons/layer.svg') }}" alt="Icon Images">
                         <div class="text">1</div>
                     </div>
                     <div class="content">
@@ -131,7 +131,7 @@
             <div class="col-lg-4 col-md-6 col-12 mt--90 mt_md--40 mt_sm--30">
                 <div class="axil-service-style--3 color-var--2 move-up wow animate" style="opacity: 0; visibility: visible;">
                     <div class="icon">
-                        <img src="assets/images/icons/layer.svg" alt="Icon Images">
+                        <img src="{{ asset('assets/images/icons/layer.svg') }}" alt="Icon Images">
                         <div class="text">2</div>
                     </div>
                     <div class="content">
@@ -148,7 +148,7 @@
             <div class="col-lg-4 col-md-6 col-12 mt--90 mt_md--40 mt_sm--30">
                 <div class="axil-service-style--3 color-var--3 move-up wow animate" style="opacity: 0; visibility: visible;">
                     <div class="icon">
-                        <img src="assets/images/icons/layer.svg" alt="Icon Images">
+                        <img src="{{ asset('assets/images/icons/layer.svg') }}" alt="Icon Images">
                         <div class="text">3</div>
                     </div>
                     <div class="content">
@@ -165,7 +165,7 @@
             <div class="col-lg-4 col-md-6 col-12 mt--90 mt_md--40 mt_sm--30">
                 <div class="axil-service-style--3 color-var--4 move-up wow animate" style="opacity: 0; visibility: visible;">
                     <div class="icon">
-                        <img src="assets/images/icons/layer.svg" alt="Icon Images">
+                        <img src="{{ asset('assets/images/icons/layer.svg') }}" alt="Icon Images">
                         <div class="text">4</div>
                     </div>
                     <div class="content">
@@ -182,7 +182,7 @@
             <div class="col-lg-4 col-md-6 col-12 mt--90 mt_md--40 mt_sm--30">
                 <div class="axil-service-style--3 color-var--5 move-up wow animate" style="opacity: 0; visibility: visible;">
                     <div class="icon">
-                        <img src="assets/images/icons/layer.svg" alt="Icon Images">
+                        <img src="{{ asset('assets/images/icons/layer.svg') }}" alt="Icon Images">
                         <div class="text">5</div>
                     </div>
                     <div class="content">
@@ -199,7 +199,7 @@
             <div class="col-lg-4 col-md-6 col-12 mt--90 mt_md--40 mt_sm--30">
                 <div class="axil-service-style--3 color-var--2 move-up wow animate" style="opacity: 0; visibility: visible;">
                     <div class="icon">
-                        <img src="assets/images/icons/layer.svg" alt="Icon Images">
+                        <img src="{{ asset('assets/images/icons/layer.svg') }}" alt="Icon Images">
                         <div class="text">6</div>
                     </div>
                     <div class="content">
@@ -251,7 +251,7 @@
                     </div>
                     <div class="thumbnail">
                         <div class="image">
-                            <img src="assets/images/blog/blog-01.jpg" alt="Blog images">
+                            <img src="{{ asset('assets/images/blog/blog-01.jpg') }}" alt="Blog images">
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                     </div>
                     <div class="thumbnail">
                         <div class="image">
-                            <img src="assets/images/blog/blog-02.jpg" alt="Blog images">
+                            <img src="{{ asset('assets/images/blog/blog-02.jpg') }}" alt="Blog images">
                         </div>
                     </div>
                 </div>

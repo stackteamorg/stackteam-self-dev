@@ -30,12 +30,12 @@
             <ul>
                 <li>
                     <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                        <img src="assets/images/about/sun-01.svg" alt="Sun images"><span title="Light Mode"> Light</span>
+                        <img src="{{ asset('assets/images/about/sun-01.svg') }}" alt="Sun images"><span title="Light Mode"> Light</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                        <img src="assets/images/about/vector.svg" alt="Vector Images"><span title="Dark Mode"> Dark</span>
+                        <img src="{{ asset('assets/images/about/vector.svg') }}" alt="Vector Images"><span title="Dark Mode"> Dark</span>
                     </a>
                 </li>
             </ul>
@@ -109,67 +109,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-9 col-md-6 col-sm-6 col-4">
-                            <div class="mainmenu-wrapepr">
-                                <!-- Start Mainmanu Nav -->
-                                <nav class="mainmenu-nav d-none d-lg-block">
-                                    <ul class="mainmenu">
-                                        <li class="has-dropdown"><a href="home-04.html#">{{ __('taas.menu.home') }}</a>
-                                            <ul class="axil-submenu">
-                                                <li><a href="home-01.html">Digital Agency</a></li>
-                                                <li><a href="home-02.html">Creative Agency</a></li>
-                                                <li><a href="home-03.html">Personal Portfolio</a></li>
-                                                <li><a href="home-04.html">Home Startup</a></li>
-                                                <li><a href="home-05.html">Corporate Agency</a></li>
-                                            </ul>
-                                        </li>
-                                        <x-language-bar />
-                                        <li><a href="{{ route('blog.index',App::currentLocale()) }}">{{ __('taas.menu.blog') }}</a></li>
-                                        <li class="has-dropdown"><a href="home-04.html#">Blog</a>
-                                            <ul class="axil-submenu">
-                                                <li><a href="blog.html">Blog List</a></li>
-                                                <li><a href="blog-list-two.html">Blog List Two</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown"><a href="home-04.html#">Pages</a>
-                                            <ul class="axil-submenu">
-                                                <li><a href="button.html">Button</a></li>
-                                                <li><a href="typography.html">Typography</a></li>
-                                                <li><a href="testimonial.html">Testimonial</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="case-study.html">Case Study</a></li>
-                                                <li><a href="single-case-study.html">Case Study Details</a></li>
-                                                <li><a href="comming-soon.html">Comming Soon</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-
-                                    </ul>
-                                </nav>
-                                <!-- End Mainmanu Nav -->
-
-                                <!-- Start Hamburger -->
-                                <div class="ax-header-button ml--40 ml_lg--10 d-none d-sm-block">
-                                    <a class="axil-button btn-solid btn-extra02-color" href="home-04.html#"><span class="button-text">Let's Talk</span><span class="button-icon"></span></a>
-                                </div>
-                                <!-- End Hamburger -->
-
-                                <!-- Start Menu Bar  -->
-                                <div class="ax-menubar popup-navigation-activation d-block d-lg-none ml_sm--20 ml_md--20">
-                                    <div>
-                                        <i></i>
-                                    </div>
-                                </div>
-                                <!-- End Menu Bar  -->
-                            </div>
-                        </div>
+                        <x-layout-menu />
                     </div>
                 </div>
             </div>
@@ -181,7 +121,7 @@
                 <div class="mobileheader">
                     <div class="logo">
                         <a href="home-01.html">
-                            <img src="assets/images/logo/keystoke.svg" alt="Logo images">
+                            <img src="{{ asset('assets/images/logo/keystoke.svg') }}" alt="Logo images">
                         </a>
                     </div>
                     <a class="close-menu" href="home-04.html#"></a>

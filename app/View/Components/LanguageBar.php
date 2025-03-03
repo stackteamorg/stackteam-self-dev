@@ -12,10 +12,31 @@ class LanguageBar extends Component
 
     public array $languages = [
 
+        'ar' => [
+            'name' => 'persian',
+            'title' => 'العربية',
+            'flag' => '🇦🇪',
+            'url' => null,
+        ],
+
+        'de' => [
+            'name' => 'deutsch',
+            'title' => 'Deutsch',
+            'flag' => '🇩🇪',
+            'url' => null,
+        ],
+
         'en' => [
             'name' => 'english',
             'title' => 'English',
             'flag' => '🇬🇧',
+            'url' => null,
+        ],
+
+        'es' => [
+            'name' => 'español',
+            'title' => 'Español',
+            'flag' => '🇪🇸',
             'url' => null,
         ],
 
@@ -26,12 +47,20 @@ class LanguageBar extends Component
             'url' => null,
         ],
 
-        'ar' => [
-            'name' => 'persian',
-            'title' => 'العربية',
-            'flag' => '🇦🇪',
+        'fr' => [
+            'name' => 'français',
+            'title' => 'Français',
+            'flag' => '🇫🇷',
             'url' => null,
         ],
+
+        'ru' => [
+            'name' => 'русский',
+            'title' => 'Русский',
+            'flag' => '🇷🇺',
+            'url' => null,
+        ],
+
     ];
 
     public array $current = [];

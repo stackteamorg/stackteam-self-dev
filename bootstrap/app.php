@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
         then: function () {
 
-            Route::pattern('locale', 'en|fa|ar|ru|fr|de'); 
+            Route::pattern('locale', 'ar|de|en|es|fa|fr|ru'); 
 
             Route::middleware([SetLocale::class])->group(function () {
 
