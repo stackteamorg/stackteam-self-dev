@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font/dist/Shabnam.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font/dist/Shabnam.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font/dist/Shabnam-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font/dist/Shabnam-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font/dist/Shabnam-Light.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font/dist/Shabnam-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}

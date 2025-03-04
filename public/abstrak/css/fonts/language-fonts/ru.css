@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm45_bZF3gnD-A.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm45_bZF7gnD-A.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm45_bZF5gnD-A.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}

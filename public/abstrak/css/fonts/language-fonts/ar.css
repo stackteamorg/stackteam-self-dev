@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stackfont';
+    src: url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Light.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}

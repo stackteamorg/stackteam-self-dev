@@ -9,9 +9,15 @@
     <title>Abstrak | Home Startup</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('abstrak/media/favicon.png') }}">
-    <link rel="stylesheet" href="{{ asset('abstrak/css/vendor/bootstrap.min.css') }}">
+
+    <!-- Language Font -->
+    <link rel="stylesheet" href="{{ asset('abstrak/css/fonts/language-fonts/fa.css') }}">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{{ asset('abstrak/css/vendor/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('abstrak/css/vendor/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('abstrak/css/vendor/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('abstrak/css/vendor/slick-theme.css') }}">
@@ -21,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('abstrak/css/vendor/odometer-theme-default.css') }}">
 
     <!-- Site Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('abstrak/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('abstrak/css/app-rtl.css') }}">
 
 </head>
 
@@ -669,9 +675,9 @@
 
     <!-- Jquery Js -->
     <script src="{{ asset('abstrak/js/vendor/jquery.min.js') }}"></script>
-    <script src="{{ asset('abstrak/js/js/vendor/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('abstrak/js/js/vendor/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('abstrak/js/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/odometer.min.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/jquery-appear.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/slick.min.js') }}"></script>
