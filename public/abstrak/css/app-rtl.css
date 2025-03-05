@@ -550,7 +550,7 @@ input {
 }
 
 .input-group:before {
-    content: url("../../media/message.png");
+    content: url("../media/icon/message.png");
     position: absolute;
     right: 30px;
     top: 24px;
