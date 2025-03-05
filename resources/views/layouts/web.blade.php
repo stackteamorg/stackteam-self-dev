@@ -1,398 +1,257 @@
 
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html class="no-js" lang="{{ $locate }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home 04 || keystroke Creative Agency Bootstrap4 Template</title>
-    <meta name="robots" content="noindex, follow" />
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Abstrak | Home Startup</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <!-- CSS
-	============================================ -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/plugins.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('abstrak/media/favicon.png') }}">
+
+    <!-- Language Font -->
+    <x-style-layout style="font-lang" />
+
+    <!-- Vendor CSS -->
+    <x-style-layout style="css/vendor/bootstrap.min.css" />
+    <x-style-layout style="css/vendor/font-awesome.css" />
+    <x-style-layout style="css/vendor/slick.css" />
+    <x-style-layout style="css/vendor/slick-theme.css" />
+    <x-style-layout style="css/vendor/sal.css" />
+    <x-style-layout style="css/vendor/magnific-popup.css" />
+    <x-style-layout style="css/vendor/green-audio-player.min.css" />
+    <x-style-layout style="css/vendor/odometer-theme-default.css" />
+
+    <!-- Site Stylesheet -->
+    <x-style-layout style="css/app.css" />
+
 </head>
 
-<body>
+<body class="sticky-header">
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  	<![endif]-->
+    <a href="#main-wrapper" id="backto-top" class="back-to-top">
+        <i class="far fa-angle-double-up"></i>
+    </a>
 
-    <div class="main-content">
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
 
-        <div id="my_switcher" class="my_switcher">
-            <ul>
-                <li>
-                    <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                        <img src="{{ asset('assets/images/about/sun-01.svg') }}" alt="Sun images"><span title="Light Mode"> Light</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                        <img src="{{ asset('assets/images/about/vector.svg') }}" alt="Vector Images"><span title="Dark Mode"> Dark</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- Start Header -->
-        <header class="ax-header haeder-default light-logo-version header-transparent axil-header-sticky">
-            <div class="header-wrapper">
+    <div class="my_switcher d-none d-lg-block">
+        <ul>
+            <li title="Light Mode">
+                <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                    <i class="fal fa-lightbulb-on"></i>
+                </a>
+            </li>
+            <li title="Dark Mode">
+                <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                    <i class="fas fa-moon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main-wrapper" class="main-wrapper">
+        <!--=====================================-->
+        <!--=        Header Area Start       	=-->
+        <!--=====================================-->
+        <header class="header axil-header header-style-1">
+            <div id="axil-sticky-placeholder"></div>
+            <div class="axil-mainmenu">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-8">
-                            <div class="logo">
-                                <a href="home-01.html">
-                                    <svg width="247px" height="72px" viewBox="0 0 247 72" version="1.1">
-                                        <!-- Generator: sketchtool 57.1 (101010) - https://sketch.com -->
-                                        <title>988EC315-517F-4BF2-8EED-A33D37B93CDD</title>
-                                        <desc>Created with sketchtool.</desc>
-                                        <defs>
-                                            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-                                                <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
-                                                <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
-                                            </linearGradient>
-                                            <rect id="path-2" x="0" y="0" width="60" height="60" rx="14"></rect>
-                                            <filter x="-18.3%" y="-11.7%" width="136.7%" height="136.7%" filterUnits="objectBoundingBox" id="filter-3">
-                                                <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-                                                <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-                                                <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-                                                <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
-                                                <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
-                                                <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
-                                                <feMerge>
-                                                    <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                                                    <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
-                                                </feMerge>
-                                            </filter>
-                                            <filter x="-10.8%" y="-4.2%" width="121.7%" height="121.7%" filterUnits="objectBoundingBox">
-                                                <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
-                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
-                                                <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
-                                            </filter>
-                                        </defs>
-                                        <g id="Home-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <g id="Home-04" transform="translate(-309.000000, -38.000000)">
-                                                <g id="Banner">
-                                                    <g>
-                                                        <g>
-                                                            <g class="logo" transform="translate(315.000000, 40.000000)">
-                                                                <text id="Keystroke-Small-agen" font-family="DMSans-Bold, DM Sans" font-size="20" font-weight="bold" fill="#00004B">
-                                                                    <tspan x="75" y="24">Keystroke</tspan>
-                                                                    <tspan x="175.14" y="24.5001221" font-family="DMSans-Regular, DM Sans" font-weight="normal"></tspan>
-                                                                    <tspan x="76.16" y="49.5001221" font-family="DMSans-Regular, DM Sans" font-size="18" font-weight="normal">Small agency studio</tspan>
-                                                                </text>
-                                                                <g id="Icon">
-                                                                    <g id="Base">
-                                                                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                                                                        <use fill="#FF8A5B" fill-rule="evenodd" xlink:href="#path-2"></use>
-                                                                        <use fill-opacity="0.100000001" fill="url(#linearGradient-1)" fill-rule="evenodd" style="mix-blend-mode: overlay;" xlink:href="#path-2"></use>
-                                                                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
-                                                                    </g>
-                                                                    <g id="Group-3" transform="translate(15.000000, 11.000000)">
-                                                                        <circle class="icon-oval-lg" id="Oval" stroke="#FFFFFF" stroke-width="7" cx="15" cy="15" r="11.5"></circle>
-                                                                        <circle class="icon-oval-sm" id="Oval-Copy" fill="#FFFFFF" cx="4" cy="34" r="4"></circle>
-                                                                    </g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <x-layout-menu />
-                    </div>
+                    <x-layout-menu />
                 </div>
             </div>
         </header>
-        <!-- Start Header -->
-        <!-- Start Popup Mobile Menu -->
-        <div class="popup-mobile-manu">
-            <div class="inner">
-                <div class="mobileheader">
-                    <div class="logo">
-                        <a href="home-01.html">
-                            <img src="{{ asset('assets/images/logo/keystoke.svg') }}" alt="Logo images">
-                        </a>
+        {{ $slot }}
+
+        <!--=====================================-->
+        <!--=        Footer Area Start       	=-->
+        <!--=====================================-->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-social-link">
+                        <ul class="list-unstyled">
+                            <li><a href="https://facebook.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="200"><i class="fab fa-x-twitter"></i></a></li>
+                            <li><a href="https://www.pinterest.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="300"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="https://www.linkedin.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="400"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.instagram.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="500"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://vimeo.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="600"><i class="fab fa-vimeo-v"></i></a></li>
+                            <li><a href="https://dribbble.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="700"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="https://www.behance.net/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="800"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="https://www.snapchat.com/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="800"><i class="fab fa-snapchat-ghost"></i></a></li>
+                        </ul>
                     </div>
-                    <a class="close-menu" href="home-04.html#"></a>
                 </div>
-                <div class="menu-item">
-                    <ul class="mainmenu-item">
-                        <li class="has-children"><a href="home-04.html#">Home</a>
-                            <ul class="submenu">
-                                <li><a href="home-01.html">Digital Agency</a></li>
-                                <li><a href="home-02.html">Creative Agency</a></li>
-                                <li><a href="home-03.html">Personal Portfolio</a></li>
-                                <li><a href="home-04.html">Home Startup</a></li>
-                                <li><a href="home-05.html">Corporate Agency</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-children"><a href="home-04.html#">Services</a>
-                            <ul class="submenu">
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="service-two.html">Services Two</a></li>
-                                <li><a href="single-service.html">Services Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li class="has-children"><a href="home-04.html#">Blog</a>
-                            <ul class="submenu">
-                                <li><a href="blog.html">Blog List</a></li>
-                                <li><a href="blog-list-two.html">Blog List Two</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-children"><a href="home-04.html#">Pages</a>
-                            <ul class="submenu">
-                                <li><a href="button.html">Button</a></li>
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="testimonial.html">Testimonial</a></li>
-                                <li><a href="portfolio.html">Portfolio</a></li>
-                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="team.html">Team</a></li>
-                                <li><a href="team-details.html">Team Details</a></li>
-                                <li><a href="case-study.html">Case Study</a></li>
-                                <li><a href="single-case-study.html">Case Study Details</a></li>
-                                <li><a href="comming-soon.html">Comming Soon</a></li>
-                                <li><a href="404.html">404 Page</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-        <!-- End Popup Mobile Menu -->
-        <!-- Start Page Wrapper -->
-        <main class="page-wrappper">
-            {{ $slot }}
-        </main>
-        <!-- End Page Wrapper -->
-
-        <!-- Start Footer Area -->
-        <footer class="axil-footer footer-default footer-style-3 bg-color-extra09">
-            <!-- Start Call To Action  -->
-            <div class="axil-call-to-action callaction-style-2 pt--110 pt_sm--60 pt_md--80">
-                <div class="container">
+                <div class="footer-main">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="inner">
-                                <div class="text">
-                                    <h2 class="title">Interested in collaborations?</h2>
-                                </div>
-                                <div class="button-wrapper">
-                                    <a class="axil-button btn-large btn-solid bgextra07-color" href="home-04.html#"><span class="button-text">Let's Talk</span><span class="button-icon"></span></a>
+                        <div class="col-xl-6 col-lg-5" data-sal="slide-right" data-sal-duration="800" data-sal-delay="100">
+                            <div class="footer-widget border-end">
+                                <div class="footer-newsletter">
+                                    <h2 class="title">Get in touch!</h2>
+                                    <p>Fusce varius, dolor tempor interdum tristique, dui urna bib
+                                        endum magna, ut ullamcorper purus</p>
+                                    <form>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" placeholder="Email address">
+                                            <button class="subscribe-btn" type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Call To Action  -->
-
-            <!-- Start Footer Top Area -->
-            <div class="footer-top ax-section-gap">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start Single Widget -->
-                        <div class="col-xl-5 col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget-item">
-                                <div class="logo">
-                                    <a href="home-01.html">
-                                        <svg width="247px" height="72px" viewBox="0 0 247 72" version="1.1">
-                                            <!-- Generator: sketchtool 57.1 (101010) - https://sketch.com -->
-                                            <title>EAB575CA-61F4-4E68-97E4-378387DEE1D0</title>
-                                            <desc>Created with sketchtool.</desc>
-                                            <defs>
-                                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%">
-                                                    <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
-                                                    <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
-                                                </linearGradient>
-                                                <rect x="0" y="0" width="60" height="60" rx="14"></rect>
-                                                <filter x="-18.3%" y="-11.7%" width="136.7%" height="136.7%" filterUnits="objectBoundingBox">
-                                                    <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-                                                    <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-                                                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-                                                    <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
-                                                    <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
-                                                    <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
-                                                    <feMerge>
-                                                        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                                                        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
-                                                    </feMerge>
-                                                </filter>
-                                                <filter x="-10.8%" y="-4.2%" width="121.7%" height="121.7%" filterUnits="objectBoundingBox">
-                                                    <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
-                                                    <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
-                                                    <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
-                                                </filter>
-                                            </defs>
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <g transform="translate(-309.000000, -6452.000000)">
-                                                    <g transform="translate(0.000000, 5918.000000)">
-                                                        <g transform="translate(315.000000, 536.000000)">
-                                                            <g class="logo">
-                                                                <text font-family="DMSans-Bold, DM Sans" font-size="20" font-weight="bold" fill="#FFFFFF">
-                                                                    <tspan x="75" y="24">Keystroke</tspan>
-                                                                    <tspan x="175.14" y="24.5001221" font-family="DMSans-Regular, DM Sans" font-weight="normal"></tspan>
-                                                                    <tspan x="76.16" y="49.5001221" font-family="DMSans-Regular, DM Sans" font-size="18" font-weight="normal">Small agency studio</tspan>
-                                                                </text>
-                                                                <g>
-                                                                    <g>
-                                                                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                                                                        <use fill="#FF8A5B" fill-rule="evenodd" xlink:href="#path-2"></use>
-                                                                        <use fill-opacity="0.100000001" fill="url(#linearGradient-1)" fill-rule="evenodd" style="mix-blend-mode: overlay;" xlink:href="#path-2"></use>
-                                                                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
-                                                                    </g>
-                                                                    <g class="Group-3" transform="translate(15.000000, 11.000000)">
-                                                                        <circle class="icon-oval-lg" stroke="#FFFFFF" stroke-width="7" cx="15" cy="15" r="11.5"></circle>
-                                                                        <circle class="icon-oval-sm" fill="#FFFFFF" cx="4" cy="34" r="4"></circle>
-                                                                    </g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg>
-
-
-
-                                    </a>
+                        <div class="col-xl-6 col-lg-7" data-sal="slide-left" data-sal-duration="800" data-sal-delay="100">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="footer-widget">
+                                        <h6 class="widget-title">Services</h6>
+                                        <div class="footer-menu-link">
+                                            <ul class="list-unstyled">
+                                                <li><a href="service-design.html">Logo &amp; Branding</a></li>
+                                                <li><a href="service-development.html">Website Development</a></li>
+                                                <li><a href="service-development.html">Mobile App Development</a></li>
+                                                <li><a href="service-marketing.html">Search Engine Optimization</a></li>
+                                                <li><a href="service-marketing.html">Pay-Per-Click</a></li>
+                                                <li><a href="service-marketing.html">Social Media Marketing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="axil-ft-address">
-                                    <div class="address">
-                                        <p><span>A.</span>3078 Simpson Square, Clinton, Oklahoma, <br /> 73601, Londan</p>
-                                            <p><span>T.</span><a href="home-04.html#">+123 4567 8901</a></p>
-                                            <p><span>E.</span><a href="home-04.html#">contact@Keystroke.com</a></p>
+                                <div class="col-sm-3">
+                                    <div class="footer-widget">
+                                        <h6 class="widget-title">Resourses</h6>
+                                        <div class="footer-menu-link">
+                                            <ul class="list-unstyled">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="case-study.html">Case Studies</a></li>
+                                                <li><a href="portfolio.html">Portfolio</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="footer-widget">
+                                        <h6 class="widget-title">Support</h6>
+                                        <div class="footer-menu-link">
+                                            <ul class="list-unstyled">
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                <li><a href="terms-of-use.html">Terms of Use</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Widget -->
-
-                        <!-- Start Single Widget -->
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mt_mobile--30">
-                            <div class="footer-widget-item">
-                                <h6 class="title">Services</h6>
-                                <div class="footer-menu-container">
-                                    <ul class="ft-menu liststyle link-hover color-var--2">
-                                        <li><a href="home-04.html#">Logo & Branding</a></li>
-                                        <li><a href="home-04.html#">Website Development</a></li>
-                                        <li><a href="home-04.html#">Mobile App Development</a></li>
-                                        <li><a href="home-04.html#">Search Engine Optimization</a></li>
-                                        <li><a href="home-04.html#">Pay-Per-Click</a></li>
-                                        <li><a href="home-04.html#">Social Media Marketing</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Widget -->
-
-                        <!-- Start Single Widget -->
-                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12 mt_md--30 mt_sm--30">
-                            <div class="footer-widget-item">
-                                <h6 class="title">Resourses</h6>
-                                <div class="footer-menu-container">
-                                    <ul class="ft-menu liststyle link-hover color-var--2">
-                                        <li><a href="home-04.html#">Blog</a></li>
-                                        <li><a href="home-04.html#">Case Studies</a></li>
-                                        <li><a href="home-04.html#">Portfolio</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Widget -->
-
-                        <!-- Start Single Widget -->
-                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12 mt_md--30 mt_sm--30">
-                            <div class="footer-widget-item">
-                                <h6 class="title">Support</h6>
-                                <div class="footer-menu-container">
-                                    <ul class="ft-menu liststyle link-hover color-var--2">
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                        <li><a href="home-04.html#">Sitemap</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Widget -->
-
                     </div>
                 </div>
-            </div>
-            <!-- End Footer Top Area -->
-            <!-- Start Copyright -->
-            <div class="copyright copyright-default">
-                <div class="container">
-                    <div class="row row--0 ptb--20 axil-basic-thine-line">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="inner text-center text-md-start">
-                                <p>© 2025. All rights reserved by Your Company.</p>
+                <div class="footer-bottom" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-copyright">
+                                <span class="copyright-text">© 2022. توسعه داده شده با  <i class="fa-solid fa-heart"></i>عشق توسط <a href="https://axilthemes.com/">استک تیم</a>.</span>
+                            <span>سرویسی از استک ایده</span>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="quick-contact">
-                                <ul class="link-hover color-var--2 d-flex justify-content-md-end justify-content-center liststyle">
-                                    <li><a data-hover="Privacy Policy" href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="home-04.html#">Terms of Use</a></li>
+                        <div class="col-md-6">
+                            <div class="footer-bottom-link">
+                                <ul class="list-unstyled">
+                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a href="terms-of-use.html">Terms of Use</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Copyright -->
         </footer>
-        <!-- End Footer Area -->
+
+        <!--=====================================-->
+        <!--=       Offcanvas Menu Area       	=-->
+        <!--=====================================-->
+        <div class="offcanvas offcanvas-end header-offcanvasmenu" tabindex="-1" id="offcanvasMenuRight">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <form action="#" class="side-nav-search-form">
+                    <div class="form-group">
+                        <input type="text" class="search-field" name="search-field" placeholder="Search...">
+                        <button class="side-nav-search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+                <div class="row ">
+                    <div class="col-lg-5 col-xl-6">
+                        <ul class="main-navigation list-unstyled">
+                            <li><a href="index-1.html">Digital Agency</a></li>
+                            <li><a href="index-2.html">Creative Agency</a></li>
+                            <li><a href="index-3.html">Personal Portfolio</a></li>
+                            <li><a href="index-4.html">Home Startup</a></li>
+                            <li><a href="index-5.html">Corporate Agency</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 col-xl-6">
+                        <div class="contact-info-wrap">
+                            <div class="contact-inner">
+                                <address class="address">
+                                    <span class="title">Contact Information</span>
+                                    <p>Theodore Lowe, Ap #867-859 <br> Sit Rd, Azusa New York</p>
+                                </address>
+                                <address class="address">
+                                    <span class="title">We're Available 24/7. Call Now.</span>
+                                    <a class="tel" href="tel:8884562790"><i class="fas fa-phone"></i>(888)
+                                        456-2790</a>
+                                    <a class="tel" href="tel:12125553333"><i class="fas fa-fax"></i>(121)
+                                        255-53333</a>
+                                </address>
+                            </div>
+                            <div class="contact-inner">
+                                <h5 class="title">Find us here</h5>
+                                <div class="contact-social-share">
+                                    <ul class="social-share list-unstyled">
+                                        <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/"><i class="fab fa-x-twitter"></i></a></li>
+                                        <li><a href="https://www.behance.net/"><i class="fab fa-behance"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- JS
-============================================ -->
 
-    <!-- Modernizer JS -->
-    <script src="{{ asset('assets/js/vendor/modernizr.min.js') }}"></script>
-    <!-- jQuery JS -->
-    <script src="{{ asset('assets/js/vendor/jquery.js') }}"></script>
-    <!-- Bootstrap JS -->
-    <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.js') }}"></script>
-    <script src="{{ asset('assets/js/counterup.js') }}"></script>
-    <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.js') }}"></script>
-    <script src="{{ asset('assets/js/tilt.js') }}"></script>
-    <script src="{{ asset('assets/js/anime.js') }}"></script>
-    <script src="{{ asset('assets/js/tweenmax.js') }}"></script>
-    <script src="{{ asset('assets/js/slipting.js') }}"></script>
-    <script src="{{ asset('assets/js/scrollmagic.js') }}"></script>
-    <script src="{{ asset('assets/js/addindicators.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.js') }}"></script>
-    <script src="{{ asset('assets/js/youtube.js') }}"></script>
-    <script src="{{ asset('assets/js/countdown.js') }}"></script>
-    <script src="{{ asset('assets/js/scrollup.js') }}"></script>
-    <script src="{{ asset('assets/js/stickysidebar.js') }}"></script>
-    <script src="{{ asset('assets/js/js.cookie.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.style.switcher.js') }}"></script>
-    <script src="{{ asset('assets/js/contactform.js') }}"></script>
-    <!-- Plugins JS -->
-    <script src="{{ asset('assets/js/plugins/plugins.min.js') }}"></script>
-    <!-- Main JS -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- Jquery Js -->
+    <script src="{{ asset('abstrak/js/vendor/jquery.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/odometer.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/jquery-appear.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/slick.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/sal.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/js.cookie.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/jquery.style.switcher.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/tilt.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/green-audio-player.min.js') }}"></script>
+    <script src="{{ asset('abstrak/js/vendor/jquery.nav.js') }}"></script>
 
+    <!-- Site Scripts -->
+    <script src="{{ asset('abstrak/js/app.js') }}"></script>
 </body>
 
 </html>

@@ -7411,7 +7411,7 @@ body.op-modal-open {
 }
 
 .mainmenu > .menu-item-has-children > a::after {
-    content: "\f107";
+    /* content: "\f107"; */
     font-family: var(--font-awesome);
     font-weight: 400;
     color: var(--color-text-dark);

@@ -1,23 +1,325 @@
 @font-face {
     font-family: 'Stackfont';
-    src: url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar.woff') format('woff');
-    font-weight: normal;
     font-style: normal;
+    font-weight: 400;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-Regular.woff') format('woff');
 }
-
 @font-face {
     font-family: 'Stackfont';
-    src: url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Bold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Bold.woff') format('woff');
-    font-weight: bold;
     font-style: normal;
+    font-weight: 400;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-RegularCondensed.woff') format('woff');
 }
-
 @font-face {
     font-family: 'Stackfont';
-    src: url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Light.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/user/somar-font/dist/Somar-Light.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-RegularCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-RegularExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-RegularExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-RegularItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ThinCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ThinCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ThinExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ThinExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ThinItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraLightCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraLightCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraLightExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraLightExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraLightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
     font-weight: 300;
-    font-style: normal;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-Light.woff') format('woff');
 }
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-LightCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-LightCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-LightExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-LightExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-LightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-MediumCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-MediumCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-MediumExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-MediumExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-MediumItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-SemiBoldCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-SemiBoldCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-SemiBoldExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-SemiBoldExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-SemiBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BoldCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BoldCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BoldExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BoldExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraBoldCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraBoldCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraBoldExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraBoldExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-ExtraBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-Black.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BlackCondensed.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BlackCondensedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BlackExpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BlackExpandedItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Stackfont';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Stackfont'), url('https://fonts.cdnfonts.com/s/90887/SomarSans-BlackItalic.woff') format('woff');
+}
+
