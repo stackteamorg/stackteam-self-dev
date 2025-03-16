@@ -7,11 +7,12 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul class="list-unstyled">
-                    <li><a href="index.html"><i class="fa-solid fa-house-heart"></i></a></li>
-                    <li class="active"><i class="fa-solid fa-hashtag"></i> تکنولوژی </li>
-                    <li class="active"><i class="fa-solid fa-hashtag"></i> تکنولوژی های بکند</li>
+                    <li><a href="{{ route('blog.index', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-house-heart"></i></a></li>
+                    @if($article->category)
+                    <li class="active"><i class="fa-solid fa-hashtag"></i> {{ $article->category->name }} </li>
+                    @endif
                 </ul>
-                <h1 class="title h2"><i class="fa-brands fa-laravel"></i> لاراول، فریم ورک محبوب و قدرتمند تولید وب سایت و اپلیکیشن های تحت وب </h1>
+                <h1 class="title h2">{{ $article->title }}</h1>
             </div>
         </div>
         <ul class="shape-group-8 list-unstyled">
@@ -29,73 +30,48 @@
                 <div class="col-lg-8">
                     <div class="single-blog">
                         <div class="single-blog-content blog-grid">
+                            @if($article->icon)
                             <div class="post-thumbnail">
-                                <img src="{{ asset('abstrak/media/blog/blog-3.png') }}" alt="Blog">
+                                <img src="{{ asset($article->icon) }}" alt="{{ $article->title }}">
                             </div>
+                            @endif
                             <div class="author">
                                 <div class="author-thumb">
+                                    @if($article->author && $article->author->profile_photo_path)
+                                    <img src="{{ asset($article->author->profile_photo_path) }}" alt="{{ $article->author->name }}">
+                                    @else
                                     <img src="{{ asset('abstrak/media/blog/author-1.png') }}" alt="Blog Author">
+                                    @endif
                                 </div>
                                 <div class="info">
-                                    <h6 class="author-name">ترزا آندروود</h6>
+                                    <h6 class="author-name">{{ $article->author ? $article->author->name : 'نویسنده ناشناس' }}</h6>
                                     <ul class="blog-meta list-unstyled">
-                                        <li>17/1/1400</li>
-                                        <li>9 دقیقه برای خواندن</li>
+                                        <li>{{ $article->created_at->format('Y/m/d') }}</li>
+                                        <li>{{ ceil(str_word_count($article->content) / 200) }} دقیقه برای خواندن</li>
                                     </ul>
                                 </div>
                             </div>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-                            <div class="blog-grid blog-without-thumb mt--80">
-                                <blockquote>
-                                    <h5 class="title"><a href="single-blog.html">“لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز ”</a></h5>
-                                </blockquote>
-                                <div class="author">
-                                    <div class="info">
-                                        <h6 class="author-name">ترزا آندروود</h6>
-                                        <ul class="blog-meta list-unstyled">
-                                            <li>17/8/1400</li>
-                                            <li>18دقیقه برای خواندن </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="title mb--30">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</h3>
-                            <p class="mb--40">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="featured-img">
-                                        <img src="{{ asset('abstrak/media/blog/blog-8.png') }}" alt="Blog">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="featured-img">
-                                        <img src="{{ asset('abstrak/media/blog/blog-9.png') }}" alt="Blog">
-                                    </div>
-                                </div>
+                            <div class="content">
+                                {!! $article->content !!}
                             </div>
                         </div>
+                        @if($article->author)
                         <div class="blog-author">
                             <div class="author">
                                 <div class="author-thumb">
+                                    @if($article->author->profile_photo_path)
+                                    <img src="{{ asset($article->author->profile_photo_path) }}" alt="{{ $article->author->name }}">
+                                    @else
                                     <img src="{{ asset('abstrak/media/blog/author-3.png') }}" alt="Blog Author">
+                                    @endif
                                 </div>
                                 <div class="info">
-                                    <h5 class="title"><a href="single-blog.html#">ترزا آندروود</a></h5>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                                    <ul class="social-share list-unstyled">
-                                        <li><a href="single-blog.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-pinterest-p"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-vimeo-v"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-dribbble"></i></a></li>
-                                        <li><a href="single-blog.html#"><i class="fab fa-behance"></i></a></li>
-                                    </ul>
+                                    <h5 class="title">{{ $article->author->name }}</h5>
+                                    <p>{{ $article->author->bio ?? 'نویسنده سایت' }}</p>
                                 </div>
                             </div>
                         </div>
+                        @endif
                         <div class="blog-comment">
                             <h3 class="section-title">نظرات:</h3>
                             <div class="comment-list">

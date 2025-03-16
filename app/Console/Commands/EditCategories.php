@@ -11,7 +11,7 @@ class EditCategories extends Command
      *
      * @var string
      */
-    protected $signature = 'app:edit-categories';
+    protected $signature = 'edit:category';
 
     /**
      * The console command description.
