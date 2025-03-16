@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('icon')->nullable();
-            $table->string('icon_type')->default('fa');
+            $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->text('content');
-            $table->foreignId('author_id')->nullable()->constrained('users')->nullOnDelete();
-            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
-            $table->string('lang')->default('fa');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('lang', 2)->default('fa');
+            $table->boolean('is_publish')->default(false);
             $table->timestamps();
         });
     }
@@ -28,8 +27,9 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('categories');
     }
 };

@@ -3,67 +3,103 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Services\ArticleService;
+
+use App\Models\Article;
+use App\Models\User;
+use App\Models\Category;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class ArticleCreate extends Command
 {
 
-    protected $signature = 'article:create'; // Define the Artisan command signature
+    protected $signature = 'make:article'; // Define the Artisan command signature
     protected $description = 'Create a new article using Artisan CLI'; // Description of the command
-    protected $articleService;
 
-    public function __construct(ArticleService $articleService)
-    {
-        parent::__construct();
-        $this->articleService = $articleService;
-    }
 
     /**
      * Execute the console command.
      */
 
-    public function handle(ArticleService $articleService)
+    public function handle()
     {
-         // Prompt user input for article details
-         $data = [
-            'title'       => $this->ask('Enter article title'), // Get the title from the user
-            'slug'        => $this->ask('Enter article slug'), // Get the slug from the user
-            'content'     => $this->ask('Enter article content'), // Get the content from the user
-            'author_id'   => $this->ask('Enter author ID'), // Get the author ID (optional)
-            'category_id' => $this->ask('Enter category ID'), // Get the category ID (optional)
-            'lang'        => $this->choice('Select article language', ['fa', 'en', 'ar'], 0), // Allow user to choose a language from predefined options
-            'tags'        => explode(',', $this->ask('Enter tag IDs separated by commas (e.g., 1,2,3)')), // Get comma-separated tag IDs and convert to an array
-        ];
+        $data = $this->getArticleData();
+        $authorId = $this->getAuthorId();
+        $categoryId = $this->getCategoryId();
 
-        // Validate user input
-        $validator = Validator::make($data, [
-            'title'       => 'required|string|max:255', // Title is required and must be a string with max length of 255
-            'slug'        => 'required|string|unique:articles,slug', // Slug is required and must be unique in the articles table
-            'content'     => 'required|string', // Content is required and must be a string
-            'author_id'   => 'nullable|exists:users,id', // Author ID must exist in users table if provided
-            'category_id' => 'nullable|exists:categories,id', // Category ID must exist in categories table if provided
-            'lang'        => 'required|string|in:fa,en,ar', // Language must be one of the predefined options
-            'tags'        => 'array', // Tags must be an array
-            'tags.*'      => 'exists:tags,id', // Each tag ID must exist in the tags table
-        ]);
+        $validator = $this->validateData($data);
 
-        // If validation fails, show error messages and stop execution
         if ($validator->fails()) {
-            $this->error('Validation failed:');
-            foreach ($validator->errors()->all() as $error) {
-                $this->error($error);
-            }
+            $this->displayValidationErrors($validator);
             return;
         }
 
-        // Create the article using the ArticleService
-        $article = $this->articleService->createArticle($data);
+        $article = $this->createArticle($data, $authorId, $categoryId);
 
-        // Display success message and article details
+        $this->displaySuccessMessage($article);
+    }
+
+    private function getArticleData()
+    {
+        return [
+            'title' => $this->ask('Enter article title'),
+            'content' => $this->ask('Enter article content', Lang::get('taas.loren')),
+            'lang' => $this->choice('Select article language', ['fa', 'en', 'ar'], 0),
+            'slug' => Str::slug($this->ask('Enter article title')),
+        ];
+    }
+
+    private function getAuthorId()
+    {
+        $authors = User::all();
+        $authorChoices = $authors->pluck('name', 'id')->toArray();
+        $authorName = $this->choice('Select the author', $authorChoices);
+        return array_search($authorName, $authorChoices);
+    }
+
+    private function getCategoryId()
+    {
+        $categories = Category::all();
+        $categoryChoices = $categories->pluck('name', 'id')->toArray();
+        $categoryName = $this->choice('Select the category', $categoryChoices);
+        return array_search($categoryName, $categoryChoices);
+    }
+
+    private function validateData($data)
+    {
+        return Validator::make($data, [
+            'title' => 'required|string|max:255',
+            'slug' => 'required|string|unique:articles,slug',
+            'content' => 'required|string',
+            'lang' => 'required|string|in:fa,en,ar',
+        ]);
+    }
+
+    private function displayValidationErrors($validator)
+    {
+        $this->error('Validation failed:');
+        foreach ($validator->errors()->all() as $error) {
+            $this->error($error);
+        }
+    }
+
+    private function createArticle($data, $authorId, $categoryId)
+    {
+        return Article::create([
+            'title' => $data['title'],
+            'slug' => $data['slug'],
+            'content' => $data['content'],
+            'author_id' => $authorId,
+            'category_id' => $categoryId,
+            'lang' => $data['lang'],
+        ]);
+    }
+
+    private function displaySuccessMessage($article)
+    {
         $this->info('Article created successfully!');
         $this->info('Title: ' . $article->title);
         $this->info('Article ID: ' . $article->id);
-        
     }
 }

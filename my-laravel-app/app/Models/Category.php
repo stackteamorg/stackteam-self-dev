@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Models;
 
@@ -9,12 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name', 'slug', 'title', 'description', 'icon', 'icon_type', 'lang'
-    ];
-    
+    protected $fillable = ['name', 'description'];
+
     public function articles()
     {
-        return $this->hasMany(Article::class);
+        return $this->belongsToMany(Article::class, 'article_tags');
     }
 }
