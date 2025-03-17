@@ -56,7 +56,7 @@ class Article extends Controller
         if (Auth::id() !== $article->author_id) {
             return response()->json([
                 'success' => false,
-                'message' => 'شما اجازه ویرایش این مقاله را ندارید.'
+                'message' => __('article.permission_denied')
             ], 403);
         }
 
@@ -68,7 +68,7 @@ class Article extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => 'داده‌های ورودی نامعتبر هستند.',
+                'message' => __('article.invalid_data'),
                 'errors' => $validator->errors()
             ], 422);
         }
@@ -80,7 +80,7 @@ class Article extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'محتوای مقاله با موفقیت به‌روزرسانی شد.',
+                'message' => __('article.update_success'),
                 'article' => [
                     'id' => $article->id,
                     'title' => $article->title,
@@ -90,7 +90,7 @@ class Article extends Controller
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'خطا در به‌روزرسانی محتوای مقاله: ' . $e->getMessage()
+                'message' => __('article.update_error', ['message' => $e->getMessage()])
             ], 500);
         }
     }
