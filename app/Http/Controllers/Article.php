@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article as ArticleModel;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,7 +30,6 @@ class Article extends Controller
 
         $article = ArticleModel::findOrFail((int) request()->route('id'));
         
-        //dd($article->toArray());
         // Check if the slug matches to ensure proper URL
         if ($article->slug !== request()->route('slug')) {
             abort(404);
@@ -51,10 +49,10 @@ class Article extends Controller
     public function updateContent(Request $request)
     {
         $id = request()->route('id');
-        // یافتن مقاله
+        // Find the article
         $article = ArticleModel::findOrFail($id);
         
-        // بررسی دسترسی کاربر
+        // Check user permission
         if (Auth::id() !== $article->author_id) {
             return response()->json([
                 'success' => false,
@@ -62,7 +60,7 @@ class Article extends Controller
             ], 403);
         }
 
-        // اعتبارسنجی داده‌های ورودی
+        // Validate input data
         $validator = Validator::make($request->all(), [
             'content' => 'required',
         ]);
@@ -76,7 +74,7 @@ class Article extends Controller
         }
 
         try {
-            // ذخیره محتوای جدید
+            // Save new content
             $article->content = json_encode($request->content);
             $article->save();
 

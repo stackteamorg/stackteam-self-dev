@@ -3,6 +3,17 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Article;
+use App\Http\Middleware\SetLocale;
+
+Route::middleware([SetLocale::class])->group(function () {
+
+    Route::prefix('{locale}')
+        ->group(base_path('routes/taas.php'));
+
+    Route::prefix('{locale}/blog')
+        ->group(base_path('routes/blog.php'));
+
+});
 
 
 Route::get('/dashboard', function () {
@@ -15,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     // مسیر به‌روزرسانی محتوای مقاله
-    Route::post('/articles/{id}/update-content', [Article::class, 'updateContent'])->name('articles.update');
+    
 });
 
 require __DIR__.'/auth.php';
