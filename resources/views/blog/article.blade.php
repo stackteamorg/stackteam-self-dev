@@ -1,26 +1,7 @@
 <x-web-layout>
 
-    <!--=====================================-->
-    <!--=       Breadcrumb Area Start       =-->
-    <!--=====================================-->
-    <div class="breadcrum-area">
-        <div class="container">
-            <div class="breadcrumb">
-                <ul class="list-unstyled">
-                    <li><a href="{{ route('blog.index', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-house-heart"></i></a></li>
-                    @if($article->category)
-                    <li class="active"><i class="fa-solid fa-hashtag"></i> {{ $article->category->name }} </li>
-                    @endif
-                </ul>
-                <h1 class="title h2">{{ $article->title }}</h1>
-            </div>
-        </div>
-        <ul class="shape-group-8 list-unstyled">
-            <li class="shape shape-1" data-sal="slide-right" data-sal-duration="500" data-sal-delay="100"><img src="{{ asset('abstrak/media/others/bubble-9.png') }}" alt="Bubble"></li>
-            <li class="shape shape-2" data-sal="slide-left" data-sal-duration="500" data-sal-delay="200"><img src="{{ asset('abstrak/media/others/bubble-11.png') }}" alt="Bubble"></li>
-            <li class="shape shape-3" data-sal="slide-up" data-sal-duration="500" data-sal-delay="300"><img src="{{ asset('abstrak/media/others/line-4.png') }}" alt="Line"></li>
-        </ul>
-    </div>
+    <x-article-breadcrum :article="$article" />
+    
     <!--=====================================-->
     <!--=        Blog Area Start       	    =-->
     <!--=====================================-->
@@ -29,48 +10,9 @@
             <div class="row row-40">
                 <div class="col-lg-8">
                     <div class="single-blog">
-                        <div class="single-blog-content blog-grid">
-                            @if($article->icon)
-                            <div class="post-thumbnail">
-                                <img src="{{ asset($article->icon) }}" alt="{{ $article->title }}">
-                            </div>
-                            @endif
-                            <div class="author">
-                                <div class="author-thumb">
-                                    @if($article->author && $article->author->profile_photo_path)
-                                    <img src="{{ asset($article->author->profile_photo_path) }}" alt="{{ $article->author->name }}">
-                                    @else
-                                    <img src="{{ asset('abstrak/media/blog/author-1.png') }}" alt="Blog Author">
-                                    @endif
-                                </div>
-                                <div class="info">
-                                    <h6 class="author-name">{{ $article->author ? $article->author->name : 'نویسنده ناشناس' }}</h6>
-                                    <ul class="blog-meta list-unstyled">
-                                        <li>{{ $article->created_at->format('Y/m/d') }}</li>
-                                        <li>{{ ceil(str_word_count($article->content) / 200) }} دقیقه برای خواندن</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content">
-                                {!! $article->content !!}
-                            </div>
-                        </div>
+                        <x-article-content :article="$article" />
                         @if($article->author)
-                        <div class="blog-author">
-                            <div class="author">
-                                <div class="author-thumb">
-                                    @if($article->author->profile_photo_path)
-                                    <img src="{{ asset($article->author->profile_photo_path) }}" alt="{{ $article->author->name }}">
-                                    @else
-                                    <img src="{{ asset('abstrak/media/blog/author-3.png') }}" alt="Blog Author">
-                                    @endif
-                                </div>
-                                <div class="info">
-                                    <h5 class="title">{{ $article->author->name }}</h5>
-                                    <p>{{ $article->author->bio ?? 'نویسنده سایت' }}</p>
-                                </div>
-                            </div>
-                        </div>
+                        <x-article-author :author="$article->author" />
                         @endif
                         <div class="blog-comment">
                             <h3 class="section-title">نظرات:</h3>

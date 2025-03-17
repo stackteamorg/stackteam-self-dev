@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Article;
 
 
 Route::get('/dashboard', function () {
@@ -12,6 +13,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    // مسیر به‌روزرسانی محتوای مقاله
+    Route::post('/articles/{id}/update-content', [Article::class, 'updateContent'])->name('articles.update');
 });
 
 require __DIR__.'/auth.php';

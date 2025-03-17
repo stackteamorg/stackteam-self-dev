@@ -249,6 +249,9 @@
     <script src="{{ asset('abstrak/js/vendor/tilt.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/green-audio-player.min.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/jquery.nav.js') }}"></script>
+    <!-- Load EditorJS and article viewer script -->
+    <script src="{{ asset('abstrak/js/vendor/editor.js') }}"></script>
+    <script src="{{ asset('abstrak/js/editor/article-viewer.js') }}"></script>
 
     <!-- Site Scripts -->
     <script src="{{ asset('abstrak/js/app.js') }}"></script>
