@@ -12,16 +12,6 @@
                 @endif
             </ul>
             <h1 class="title h2"><i class="fa-solid fa-hashtag"></i> {{ $article->title }}</h1>
-            <ul class="list-unstyled">
-                <li><a id="edit-article-button" href="#"><i class="fa-solid fa-pen-to-square"></i></a></li>
-                <li>
-                    <a href="#" id="save-article-button" style="display: none;" 
-               data-article-id="{{ $article->id }}" 
-               data-save-url="{{ route('articles.update', $article->id) }}">
-                        <i class="fa-solid fa-floppy-disk"></i>
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
     <ul class="shape-group-8 list-unstyled">

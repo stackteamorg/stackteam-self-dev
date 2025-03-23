@@ -5,15 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Article;
 use App\Http\Middleware\SetLocale;
 
-Route::middleware([SetLocale::class])->group(function () {
 
-    Route::prefix('{locale}')
-        ->group(base_path('routes/taas.php'));
 
-    Route::prefix('{locale}/blog')
-        ->group(base_path('routes/blog.php'));
-
-});
 
 
 Route::get('/dashboard', function () {
@@ -29,4 +22,17 @@ Route::middleware('auth')->group(function () {
     
 });
 
+
 require __DIR__.'/auth.php';
+
+
+Route::middleware([SetLocale::class])->group(function () {
+
+    Route::prefix('{locale}')
+        ->group(base_path('routes/taas.php'));
+
+    Route::prefix('{locale}/blog')
+        ->group(base_path('routes/blog.php'));
+
+});
+

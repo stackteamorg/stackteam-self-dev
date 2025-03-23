@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="{{ $locate }}">
 
@@ -250,7 +249,8 @@
     <script src="{{ asset('abstrak/js/vendor/green-audio-player.min.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/jquery.nav.js') }}"></script>
     <!-- Load EditorJS and article viewer script -->
-    <script src="{{ asset('abstrak/js/vendor/editor.js') }}"></script>
+    <script src="{{ asset('abstrak/js/editor/editor.js') }}"></script>
+    <script src="{{ asset('node_modules/@editorjs/code/dist/bundle.js') }}"></script>
     <script src="{{ asset('abstrak/js/editor/article-viewer.js') }}"></script>
 
     <!-- Site Scripts -->

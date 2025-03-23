@@ -80,7 +80,11 @@ class LanguageBar extends Component
     public function render(): View|Closure|string
     {
 
-        $route = $route = Route::current();
+        $route = Route::current();
+
+        if (is_null($route)) { 
+            return '';
+        }
         $parameters = $route->parameters();
 
         $this->current = $this->languages[$parameters['locale']];
