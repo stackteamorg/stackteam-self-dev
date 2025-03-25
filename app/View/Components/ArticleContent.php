@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use App\Models\Article;
+use Illuminate\Support\Str;
 
 class ArticleContent extends Component
 {
@@ -16,12 +17,15 @@ class ArticleContent extends Component
      */
     public $article;
 
+    public $content;
+
     /**
      * Create a new component instance.
      */
     public function __construct(Article $article)
     {
         $this->article = $article;
+        $this->content = Str::markdown($article->content);
     }
 
     /**

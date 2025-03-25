@@ -474,6 +474,19 @@ input:focus,
     border-color: transparent;
 }
 
+pre code {
+    display: block;
+    padding: 20px;
+    direction: ltr !important;
+    text-align: left !important;
+  }
+
+code {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+
 input::-webkit-input-placeholder, .form-control::-webkit-input-placeholder {
     color: var(--color-gray-2);
     /* Firefox */

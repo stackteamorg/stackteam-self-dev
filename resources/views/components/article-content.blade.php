@@ -23,7 +23,19 @@
     
     
     <div class="content">
-        {!! $article->content !!}
+        {!! $content !!}    
+        <div class="breadcrumb">
+            <ul class="list-unstyled">
+                                
+                @if($article->tags && $article->tags->count() > 0)
+                    @foreach($article->tags as $tag)
+                        <li class="active">
+                            <i class="fa-solid fa-tag"></i> {{ $tag->name }}
+                        </li>
+                    @endforeach
+                @endif
+            </ul>
+        </div>
     </div>
 
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     /**
      * Run the migrations.
      */
@@ -26,6 +27,7 @@ return new class extends Migration
                   ->constrained('categories')
                   ->nullOnDelete();
             $table->string('lang')->default('fa');
+            $table->enum('status', ['draft', 'published', 'archived','suspended'])->default('draft');
             $table->timestamps();
         });
     }

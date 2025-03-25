@@ -26,6 +26,9 @@
     <x-style-layout style="css/vendor/green-audio-player.min.css" />
     <x-style-layout style="css/vendor/odometer-theme-default.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark-dimmed.min.css">
+
+
     <!-- Site Stylesheet -->
     <x-style-layout style="css/app.css" />
 
@@ -248,13 +251,16 @@
     <script src="{{ asset('abstrak/js/vendor/tilt.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/green-audio-player.min.js') }}"></script>
     <script src="{{ asset('abstrak/js/vendor/jquery.nav.js') }}"></script>
-    <!-- Load EditorJS and article viewer script -->
-    <script src="{{ asset('abstrak/js/editor/editor.js') }}"></script>
-    <script src="{{ asset('node_modules/@editorjs/code/dist/bundle.js') }}"></script>
-    <script src="{{ asset('abstrak/js/editor/article-viewer.js') }}"></script>
+    
+
 
     <!-- Site Scripts -->
     <script src="{{ asset('abstrak/js/app.js') }}"></script>
+
+    <!-- Highlight.js for code syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
 </body>
 
 </html>

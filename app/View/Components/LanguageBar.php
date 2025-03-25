@@ -85,6 +85,7 @@ class LanguageBar extends Component
         if (is_null($route)) { 
             return '';
         }
+        
         $parameters = $route->parameters();
 
         $this->current = $this->languages[$parameters['locale']];

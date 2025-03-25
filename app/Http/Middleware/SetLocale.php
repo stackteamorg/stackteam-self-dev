@@ -16,9 +16,9 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $locale = $request->route('locale'); // دریافت مقدار locale از URL
+        $locale = $request->route('locale'); // Get locale value from URL
         if (!in_array($locale, ['ar', 'de','en','es','fa','fr','ru'])) {
-            $locale = config('app.locale'); // مقدار پیش‌فرض
+            $locale = config('app.locale'); // Default value
         }
         
         App::setLocale($locale);
