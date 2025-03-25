@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasImages;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use HasFactory;
+    use HasFactory, HasImages;
 
     protected $fillable = ['title', 'icon', 'icon_type', 'slug', 'content', 'author_id', 'category_id', 'lang', 'image'];
 
