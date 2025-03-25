@@ -8002,7 +8002,7 @@ Pagination
 }
 
 .blog-author .author .author-thumb img {
-    border-radius: 50%;
+    border-radius: 15%;
 }
 
 .blog-author .author .info {
@@ -8011,6 +8011,10 @@ Pagination
     -ms-flex: 1;
     flex: 1;
     margin-right: 30px;
+}
+
+.author-thumb img {
+    border-radius: 15%;
 }
 
 @media only screen and (max-width: 767px) {

@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('filename'); // نام فایل تصویر
-            $table->string('path')->nullable(); // مسیر ذخیره تصویر
-            $table->string('original_filename')->nullable(); // نام اصلی فایل
-            $table->string('mime_type')->nullable(); // نوع فایل
-            $table->integer('size')->nullable(); // حجم فایل (بایت)
-            $table->enum('imageable_type', ['Article', 'User']); // نام مدل (جدول مقصد)
-            $table->unsignedBigInteger('imageable_id'); // شناسه رکورد در جدول مقصد
-            $table->string('alt_text')->nullable(); // متن جایگزین
+            $table->string('filename'); // Image filename
+            $table->string('path')->nullable(); // Image storage path
+            $table->string('original_filename')->nullable(); // Original filename
+            $table->string('mime_type')->nullable(); // File type
+            $table->integer('size')->nullable(); // File size (bytes)
+            $table->enum('imageable_type', ['Article', 'User']); // Model name (target table)
+            $table->unsignedBigInteger('imageable_id'); // Record ID in target table
+            $table->string('alt_text')->nullable(); // Alternative text
             $table->timestamps();
             
-            // ایجاد ایندکس برای رابطه polymorphic
+            // Create index for polymorphic relationship
             $table->index(['imageable_type', 'imageable_id']);
         });
     }

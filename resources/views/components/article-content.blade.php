@@ -6,11 +6,7 @@
     
     <div class="author">
         <div class="author-thumb">
-            @if($article->author && $article->author->profile_photo_path)
-            <img src="{{ asset($article->author->profile_photo_path) }}" alt="{{ $article->author->name }}">
-            @else
-            <img src="{{ asset('abstrak/media/blog/author-1.png') }}" alt="Blog Author">
-            @endif
+            <x-image :image="$article->author->profileImage" width="64" height="64" />  
         </div>
         <div class="info">
             <h6 class="author-name">{{ $article->author ? $article->author->name : 'نویسنده ناشناس' }}</h6>
