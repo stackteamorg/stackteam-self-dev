@@ -3,6 +3,10 @@
 namespace App\Models;
 
 use App\Traits\HasImages;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Tag;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +14,7 @@ class Article extends Model
 {
     use HasFactory, HasImages;
 
-    protected $fillable = ['title', 'icon', 'icon_type', 'slug', 'content', 'author_id', 'category_id', 'lang', 'image'];
+    protected $fillable = ['title', 'icon', 'slug', 'content', 'author_id', 'category_id', 'lang', 'image'];
 
     public function author()
     {
@@ -25,5 +29,10 @@ class Article extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'article_tags');
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

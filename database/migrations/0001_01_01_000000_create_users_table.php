@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->text('biography')->nullable(); // متن بیوگرافی کاربر
+            $table->string('headline')->nullable(); // عنوان یا سمت کاربر
+            $table->string('location')->nullable(); // موقعیت مکانی کاربر
+            $table->string('website')->nullable(); // وب‌سایت شخصی کاربر
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Image as ImageModel;
+use App\Facades\Image as ImageFacade;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -44,12 +45,6 @@ class Image extends Component
      */
     public ?int $height;
 
-    /**
-     * Whether to enable lazy loading for the image.
-     * 
-     * @var bool
-     */
-    public bool $lazy;
 
     /**
      * Create a new component instance.
@@ -68,6 +63,37 @@ class Image extends Component
      */
     public function render(): View|Closure|string
     {
+        if ($this->image && ($this->width || $this->height)) {
+            $storagePath = storage_path('app/public/' . $this->image->path);
+            
+            if (file_exists($storagePath)) {
+                $directory = dirname($storagePath);
+                $filename = pathinfo($this->image->path, PATHINFO_FILENAME);
+                $extension = pathinfo($this->image->path, PATHINFO_EXTENSION);
+                
+                $newFilename = $filename . '-' . ($this->width ?? '') . 'x' . ($this->height ?? '') . '.' . $extension;
+                $newPath = $directory . '/' . $newFilename;
+                
+                if (!file_exists($newPath)) {
+                    $image = ImageFacade::read($storagePath);
+                    
+                    if ($this->width && $this->height) {
+                        $image->cover($this->width, $this->height);
+                    } elseif ($this->width) {
+                        $image->resize($this->width, null);
+                    } elseif ($this->height) {
+                        $image->resize(null, $this->height);
+                    }
+                    
+                    $image->save($newPath);
+                }
+                
+                $relativePath = str_replace(storage_path('app/public/'), '', $newPath);
+                $this->image->path = $relativePath;
+            }
+        }
+
+        
         return view('components.image');
     }
 }

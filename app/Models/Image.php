@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Facades\Log;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
+use App\Facades\Image as ImageFacade;
 
 class Image extends Model
 {
@@ -26,8 +25,6 @@ class Image extends Model
         'size',
         'imageable_type',
         'imageable_id',
-        'is_thumbnail',
-        'is_primary',
         'alt_text',
     ];
 
@@ -37,8 +34,6 @@ class Image extends Model
      * @var array
      */
     protected $casts = [
-        'is_thumbnail' => 'boolean',
-        'is_primary' => 'boolean',
     ];
 
     /**
@@ -74,14 +69,6 @@ class Image extends Model
     public function resize(int $width, int $height, string $destinationPath = null, string $newFilename = null): ?self
     {
         try {
-            $manager = new ImageManager(new Driver());
-            
-            // بارگذاری تصویر
-            $img = $manager->read(storage_path('app/' . $this->full_path));
-            
-            // تغییر اندازه تصویر
-            $img->resize($width, $height);
-            
             // تعیین نام فایل جدید
             $filename = $newFilename ?? 'thumb_' . $this->filename;
             
@@ -89,8 +76,28 @@ class Image extends Model
             $path = $destinationPath ?? $this->path;
             $fullPath = storage_path('app/' . $path . '/' . $filename);
             
-            // ذخیره تصویر
-            $img->save($fullPath);
+            // بررسی وجود فایل با سایز درخواستی
+            if (!file_exists($fullPath)) {
+                // بارگذاری تصویر
+                $img = ImageFacade::read(storage_path('app/' . $this->full_path));
+                
+                // تغییر اندازه تصویر
+                $img->resize($width, $height);
+                
+                // ذخیره تصویر
+                $img->save($fullPath);
+            }
+            
+            // بررسی وجود رکورد برای تصویر با این نام
+            $existingImage = self::where('filename', $filename)
+                ->where('path', $path)
+                ->where('imageable_type', $this->imageable_type)
+                ->where('imageable_id', $this->imageable_id)
+                ->first();
+                
+            if ($existingImage) {
+                return $existingImage;
+            }
             
             // ایجاد رکورد جدید برای تصویر thumbnail
             return self::create([
@@ -101,8 +108,6 @@ class Image extends Model
                 'size' => filesize($fullPath),
                 'imageable_type' => $this->imageable_type,
                 'imageable_id' => $this->imageable_id,
-                'is_thumbnail' => true,
-                'is_primary' => false,
                 'alt_text' => $this->alt_text,
             ]);
         } catch (\Exception $e) {
@@ -118,11 +123,10 @@ class Image extends Model
      * @param string $model
      * @param int $modelId
      * @param string $path
-     * @param bool $isPrimary
      * @param string|null $altText
      * @return \App\Models\Image|null
      */
-    public static function upload($file, string $model, int $modelId, string $path = 'images', bool $isPrimary = false, ?string $altText = null): ?self
+    public static function upload($file, string $model, int $modelId, string $path = 'article-images', ?string $altText = null): ?self
     {
         try {
             // ایجاد نام فایل یکتا
@@ -140,8 +144,6 @@ class Image extends Model
                 'size' => $file->getSize(),
                 'imageable_type' => $model,
                 'imageable_id' => $modelId,
-                'is_thumbnail' => false,
-                'is_primary' => $isPrimary,
                 'alt_text' => $altText,
             ]);
         } catch (\Exception $e) {

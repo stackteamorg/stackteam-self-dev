@@ -1,7 +1,7 @@
 <div class="single-blog-content blog-grid">
 
     <div class="post-thumbnail">
-        <img src="{{ $article->image ? asset('storage/' . $article->image) : asset('abstrak/media/blog/blog-3.png') }}" alt="{{ $article->title }}" id="article-image">
+        <x-image :image="$article->image" />
     </div>
     
     <div class="author">

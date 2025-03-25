@@ -4,13 +4,13 @@
         @forelse ($articles as $article)
             <div class="single-post">
                 <div class="post-thumbnail">
-                    <a href="{{ url(app()->getLocale() . '/blog/' . $article->slug) }}">
-                        <img src="{{ $article->thumbnail ? asset($article->thumbnail) : asset('abstrak/media/blog/blog-default.png') }}" alt="{{ $article->title }}">
+                    <a href="{{ route('blog.article', ['locale' => app()->getLocale(), 'slug' => $article->slug, 'id' => $article->id]) }}">
+                        <x-image :image="$article->image" width="100" height="80" />
                     </a>
                 </div>
                 <div class="post-content">
                     <h6 class="title">
-                        <a href="{{ url(app()->getLocale() . '/blog/' . $article->slug) }}">{{ $article->title }}</a>
+                        <a href="{{ route('blog.article', ['locale' => app()->getLocale(), 'slug' => $article->slug, 'id' => $article->id]) }}">{{ $article->title }}</a>
                     </h6>
                     <ul class="blog-meta list-unstyled">
                         <li>{{ $article->created_at->format('d/m/Y') }}</li>
