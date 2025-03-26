@@ -31,7 +31,7 @@
     <div class="header-action">
         <ul class="list-unstyled">
             <li class="header-btn">
-                <a href="contact.html" class="axil-btn btn-fill-white">{{ __('taas.menu.brief') }}</a>
+                <a href="{{ route('brief', App::currentLocale()) }}" class="axil-btn btn-fill-white">{{ __('taas.menu.brief') }}</a>
             </li>
             
             <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
