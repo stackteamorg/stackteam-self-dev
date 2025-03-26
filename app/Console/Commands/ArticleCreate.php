@@ -223,7 +223,7 @@ class ArticleCreate extends Command
         $this->line("<fg=bright-cyan>ID:</> <fg=bright-white>{$article->id}</>");
         
         // Article URL with green color for better visibility
-        $articleUrl = route('blog.article', ['lang' => $article->lang, 'id' => $article->id, 'slug' => $article->slug]) . '/?preview=taas2024';
+        $articleUrl = route('blog.article', ['locale' => $article->lang, 'id' => $article->id, 'slug' => $article->slug]) . '/?preview=taas2024';
         $this->line("<fg=bright-cyan>URL:</> <fg=bright-green>{$articleUrl}</>");
         
         // Language information

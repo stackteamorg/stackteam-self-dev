@@ -127,7 +127,7 @@ class ArticleUpdate extends Command
         $this->line("<fg=bright-cyan>Content Preview:</> <fg=bright-white>{$contentPreview}</>");
         
         // Article URL
-        $articleUrl = route('article.show', ['id' => $article->id, 'slug' => $article->slug]);
+        $articleUrl = route('blog.article', ['locale' => $article->lang, 'id' => $article->id, 'slug' => $article->slug]);
         $this->line("<fg=bright-cyan>URL:</> <fg=bright-green>{$articleUrl}</>");
         
         $this->newLine();
