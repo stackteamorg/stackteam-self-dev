@@ -65,7 +65,7 @@ class ArticleCreate extends Command
 
         $data = [
             'title' => $title,
-            'content' => $this->ask('Enter article content', Lang::get('taas.loren')),
+            'content' => $this->getArticleContent(),
             'lang' => $lang,
             'slug' => $slug,
             'author_id' => $this->getAuthorId(),
@@ -214,8 +214,119 @@ class ArticleCreate extends Command
      */
     private function displaySuccessMessage(Article $article): void
     {
-        $this->info('Article created successfully!');
-        $this->info('Title: ' . $article->title);
-        $this->info('Article ID: ' . $article->id);
+        $this->newLine();
+        $this->info('🎉 <fg=bright-yellow;bg=blue>ARTICLE CREATED SUCCESSFULLY</fg=bright-yellow;bg=blue>');
+        $this->newLine();
+        
+        // Main article information with colors
+        $this->line("<fg=bright-cyan>Title:</> <fg=bright-white>{$article->title}</>");
+        $this->line("<fg=bright-cyan>ID:</> <fg=bright-white>{$article->id}</>");
+        
+        // Article URL with green color for better visibility
+        $articleUrl = route('blog.article', ['lang' => $article->lang, 'id' => $article->id, 'slug' => $article->slug]) . '/?preview=taas2024';
+        $this->line("<fg=bright-cyan>URL:</> <fg=bright-green>{$articleUrl}</>");
+        
+        // Language information
+        $langColor = match ($article->lang) {
+            'fa' => 'bright-blue',
+            'en' => 'bright-green',
+            'ar' => 'bright-yellow',
+            default => 'white',
+        };
+        $this->line("<fg=bright-cyan>Language:</> <fg={$langColor}>{$article->lang}</>");
+        $this->newLine();
     }
+
+    /**
+     * Get article content from user.
+     *
+     * @return string
+     */
+    private function getArticleContent(): string
+    {
+        $useEditor = $this->confirm('Do you want to use an editor for entering content?', true);
+        
+        if ($useEditor) {
+            $this->info('Opening editor for content input...');
+            $content = $this->runEditor();
+            
+            if ($content === null || trim($content) === '') {
+                $this->warn('Editor returned empty content or was cancelled.');
+                return $this->getDefaultContent();
+            }
+            
+            return $content;
+        }
+        
+        // Simple content input via CLI
+        return $this->ask('Enter article content', $this->getDefaultContent());
+    }
+    
+    /**
+     * Get default content for article.
+     *
+     * @return string
+     */
+    private function getDefaultContent(): string
+    {
+        return Lang::get('taas.loren');
+    }
+    
+    /**
+     * Run an external editor to get content.
+     *
+     * @param string|null $initialContent
+     * @return string|null
+     */
+    private function runEditor(string|null $content = null, int|null $id = null): string|null
+    {
+        // Determine file name based on id
+        $fileName = $id === null ? 'article-draft' : 'articles-' . $id;
+        $filePath = '~/' . $fileName . '.md';
+        $expandedPath = str_replace('~', $_SERVER['HOME'], $filePath);
+        $fileContent = null;
+        
+        // If content is provided, save it to the file before opening
+        if ($content !== null) {
+            // Create directory if it doesn't exist
+            $directory = dirname($expandedPath);
+            if (!is_dir($directory)) {
+                mkdir($directory, 0755, true);
+            }
+            
+            // Save content to file
+            file_put_contents($expandedPath, $content);
+            $this->info("Content saved to file: {$filePath}");
+        }
+        
+        // Execute the Typora command to open the file
+        $command = "typora $filePath";
+        $this->info("Executing: {$command}");
+        
+        // Execute the command
+        $returnCode = 0;
+        exec($command, $output, $returnCode);
+        exec('clear', $output, $returnCode);
+
+        if ($returnCode !== 0) {
+            $this->error("Failed to execute Typora command. Return code: {$returnCode}");
+            return null;
+        }
+        
+        $this->info("Terminal screen cleared.");
+        
+        // Read and display the content of the file
+        if (file_exists($expandedPath)) {
+            $fileContent = file_get_contents($expandedPath);
+            $this->info("Reading content from md file:");
+            
+            // Delete the file after reading its content
+            unlink($expandedPath);
+        } else {
+            $this->warn("File not found: {$expandedPath}");
+        }
+
+        return $fileContent;
+    }
+    
 }

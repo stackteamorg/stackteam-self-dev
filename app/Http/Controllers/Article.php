@@ -32,7 +32,6 @@ class Article extends Controller
      */
     public function show(Request $request)
     {
-
         $article = ArticleModel::findOrFail((int) request()->route('id'));
         
         // Check if the slug matches to ensure proper URL
@@ -40,7 +39,13 @@ class Article extends Controller
             abort(404);
         }
 
-        // dd($article->image);die();
+        // Check if article status is published or if user is logged in with specific email
+        $isAuthorizedUser = Auth::check() && Auth::user()->id === $article->author_id;
+        
+        // Only show published articles or drafts for authorized user
+        if ($article->status !== 'published' && !$isAuthorizedUser) {
+            abort(404);
+        }
         
         return view('blog.article', compact('article'));
     }
