@@ -95,8 +95,8 @@
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است</p>
                                     <form>
                                         <div class="input-group">
-                                            <input type="email" class="form-control" placeholder="آدرس ایمیل">
-                                            <button class="subscribe-btn" type="submit">اشتراک</button>
+                                            <input type="tel" class="form-control" placeholder=" شماره موبایل">
+                                            <button class="subscribe-btn" type="submit">شروع همکاری</button>
                                         </div>
                                     </form>
                                 </div>

@@ -18,8 +18,8 @@
             </div>
             <ul class="mainmenu">
                 <li><a href="{{ route('welcome',App::currentLocale()) }}"><i class="fa-solid fa-house-heart"></i></a></li>
-                <li><a href="contact.html">{{ __('taas.menu.services') }}</a></li>
-                <li><a href="contact.html">{{ __('taas.menu.technologies') }}</a></li>
+                <li><a href="{{ route('service.index', App::currentLocale()) }}">{{ __('taas.menu.services') }}</a></li>
+                <li><a href="{{ route('technology.index', App::currentLocale()) }}">{{ __('taas.menu.technologies') }}</a></li>
                 <li><a href="{{ route('blog.index',App::currentLocale()) }}">{{ __('taas.menu.blog') }}</a></li>
                 <li><a href="contact.html">{{ __('taas.menu.about-us') }}</a></li>
                 <li><a href="contact.html">{{ __('taas.menu.process') }}</a></li>

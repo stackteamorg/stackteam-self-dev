@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Article;
 use App\Http\Middleware\SetLocale;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TechnologyController;
 
 
 
@@ -25,6 +27,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/service', ServiceController::class)->name('service.index');
+Route::get('/technology', [TechnologyController::class, 'index'])->name('technology.index');
+
 
 Route::middleware([SetLocale::class])->group(function () {
 
@@ -35,4 +40,5 @@ Route::middleware([SetLocale::class])->group(function () {
         ->group(base_path('routes/blog.php'));
 
 });
+
 
