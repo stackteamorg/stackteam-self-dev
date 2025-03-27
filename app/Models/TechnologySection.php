@@ -22,7 +22,6 @@ class TechnologySection extends Model
         'description',
         'icon',
         'lang',
-        'article_id',
     ];
 
     /**
@@ -33,13 +32,6 @@ class TechnologySection extends Model
         return $this->hasMany(Technology::class);
     }
 
-    /**
-     * Get the related article.
-     */
-    public function article(): BelongsTo
-    {
-        return $this->belongsTo(Article::class);
-    }
 
     /**
      * Scope a query to filter by language.

@@ -17,8 +17,7 @@ class MakeTechnologySection extends Command
                             {--title= : Technology section title}
                             {--description= : Technology section description}
                             {--icon= : Technology section icon}
-                            {--lang=fa : Technology section language}
-                            {--article= : Related article ID}';
+                            {--lang=fa : Technology section language}';
 
     /**
      * The console command description.
@@ -38,23 +37,6 @@ class MakeTechnologySection extends Command
         $icon = $this->option('icon') ?: $this->ask('Please enter the technology section icon (press Enter to skip)', null);
         $lang = $this->option('lang') ?: $this->choice('Please select the technology section language', ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de'], 0);
         
-        // Check related article
-        $articleId = $this->option('article');
-        if ($articleId === null && $this->confirm('Do you want to link this technology section to a related article?', false)) {
-            $articles = \App\Models\Article::all();
-            
-            if ($articles->isEmpty()) {
-                $this->warn('No articles found.');
-            } else {
-                $this->info('Available articles:');
-                $articles->each(function ($article) {
-                    $this->line("[{$article->id}] {$article->title}");
-                });
-                
-                $articleId = $this->ask('Please enter the related article ID');
-            }
-        }
-        
         // Create technology section
         $technologySection = TechnologySection::create([
             'name' => $name,
@@ -62,7 +44,7 @@ class MakeTechnologySection extends Command
             'description' => $description,
             'icon' => $icon,
             'lang' => $lang,
-            'article_id' => $articleId,
+            'article_id' => null, // Set article_id to null as per the instruction
         ]);
         
         $this->info("Technology section '{$technologySection->name}' created successfully. ID: {$technologySection->id}");

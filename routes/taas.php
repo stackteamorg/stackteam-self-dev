@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\Brief;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TechController;
+use App\Http\Controllers\TechnologyController;
+
 Route::get('/', function () {
     return view('welcome');
     
@@ -16,4 +16,4 @@ Route::post('/brief', [Brief::class, 'store'])->name('brief.store');
 
 Route::get('/service', ServiceController::class)->name('service.index');
 
-Route::get('/technology', TechController::class)->name('technology.index');
+Route::get('/technology', TechnologyController::class)->name('technology.index');

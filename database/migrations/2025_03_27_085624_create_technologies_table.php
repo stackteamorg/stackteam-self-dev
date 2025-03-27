@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->string('lang', 5)->default('fa');
             $table->foreignId('technology_section_id')->constrained('technology_sections')->onDelete('cascade');
+            $table->foreignId('article_id')->nullable()->constrained('articles')->onDelete('set null');
             $table->timestamps();
         });
     }

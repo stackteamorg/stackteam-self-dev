@@ -10,7 +10,7 @@ class TechnologyController extends Controller
     /**
      * Display the technology page
      */
-    public function index()
+    public function __invoke()
     {
         $locale = app()->getLocale();
         
@@ -21,6 +21,7 @@ class TechnologyController extends Controller
         ->where('lang', $locale)
         ->get();
         
+        //dd($technologySections->toArray());
         return view('technology', compact('technologySections'));
     }
 }

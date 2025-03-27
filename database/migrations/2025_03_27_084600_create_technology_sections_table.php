@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('icon')->nullable();
             $table->string('lang', 5)->default('fa');
-            $table->foreignId('article_id')->nullable()->constrained('articles')->onDelete('set null');
             $table->timestamps();
         });
     }

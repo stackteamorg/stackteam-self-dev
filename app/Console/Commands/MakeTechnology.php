@@ -14,45 +14,45 @@ class MakeTechnology extends Command
      * @var string
      */
     protected $signature = 'make:tech
-                            {--name= : نام تکنولوژی}
-                            {--title= : عنوان تکنولوژی}
-                            {--description= : توضیحات تکنولوژی}
-                            {--icon= : آیکون تکنولوژی}
-                            {--lang=fa : زبان تکنولوژی}
-                            {--section= : آی‌دی بخش تکنولوژی}
-                            {--article= : آی‌دی مقاله مرتبط}';
+                            {--name= : Technology name}
+                            {--title= : Technology title}
+                            {--description= : Technology description}
+                            {--icon= : Technology icon}
+                            {--lang=fa : Technology language}
+                            {--section= : Technology section ID}
+                            {--article= : Related article ID}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'ایجاد یک تکنولوژی جدید';
+    protected $description = 'Create a new technology';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $name = $this->option('name') ?: $this->ask('نام تکنولوژی را وارد کنید');
-        $title = $this->option('title') ?: $this->ask('عنوان تکنولوژی را وارد کنید');
-        $description = $this->option('description') ?: $this->ask('توضیحات تکنولوژی را وارد کنید');
-        $icon = $this->option('icon') ?: $this->ask('آیکون تکنولوژی را وارد کنید (برای رد کردن دکمه Enter را فشار دهید)', null);
-        $lang = $this->option('lang') ?: $this->choice('زبان تکنولوژی را انتخاب کنید', ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de'], 0);
+        $name = $this->option('name') ?: $this->ask('Please enter the technology name');
+        $title = $this->option('title') ?: $this->ask('Please enter the technology title');
+        $description = $this->option('description') ?: $this->ask('Please enter the technology description');
+        $icon = $this->option('icon') ?: $this->ask('Please enter the technology icon (press Enter to skip)', null);
+        $lang = $this->option('lang') ?: $this->choice('Please select the technology language', ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de'], 0);
         
-        // انتخاب بخش تکنولوژی
+        // Select technology section
         $sectionId = $this->option('section');
         if ($sectionId === null) {
-            // لیست تمام بخش‌های تکنولوژی برای انتخاب
+            // List all technology sections for selection
             $sections = TechnologySection::byLang($lang)->get();
             
             if ($sections->isEmpty()) {
-                $this->warn('هیچ بخش تکنولوژی یافت نشد. ابتدا یک بخش تکنولوژی ایجاد کنید.');
+                $this->warn('No technology section found. Please create a technology section first.');
                 
-                if ($this->confirm('آیا می‌خواهید یک بخش تکنولوژی جدید ایجاد کنید؟', true)) {
-                    $sectionName = $this->ask('نام بخش تکنولوژی را وارد کنید');
-                    $sectionTitle = $this->ask('عنوان بخش تکنولوژی را وارد کنید');
-                    $sectionDescription = $this->ask('توضیحات بخش تکنولوژی را وارد کنید');
+                if ($this->confirm('Do you want to create a new technology section?', true)) {
+                    $sectionName = $this->ask('Please enter the technology section name');
+                    $sectionTitle = $this->ask('Please enter the technology section title');
+                    $sectionDescription = $this->ask('Please enter the technology section description');
                     
                     $section = TechnologySection::create([
                         'name' => $sectionName,
@@ -61,40 +61,40 @@ class MakeTechnology extends Command
                         'lang' => $lang,
                     ]);
                     
-                    $this->info("بخش تکنولوژی '{$section->name}' با موفقیت ایجاد شد. آی‌دی: {$section->id}");
+                    $this->info("Technology section '{$section->name}' created successfully. ID: {$section->id}");
                     $sectionId = $section->id;
                 } else {
-                    $this->error('بدون بخش تکنولوژی نمی‌توان تکنولوژی ایجاد کرد.');
+                    $this->error('Cannot create technology without a section.');
                     return 1;
                 }
             } else {
-                $this->info('بخش‌های تکنولوژی موجود:');
+                $this->info('Available technology sections:');
                 $sections->each(function ($section) {
                     $this->line("[{$section->id}] {$section->name}");
                 });
                 
-                $sectionId = $this->ask('آی‌دی بخش تکنولوژی را وارد کنید');
+                $sectionId = $this->ask('Please enter the technology section ID');
             }
         }
         
-        // بررسی مقاله مرتبط
+        // Check related article
         $articleId = $this->option('article');
-        if ($articleId === null && $this->confirm('آیا می‌خواهید این تکنولوژی را با یک مقاله مرتبط کنید؟', false)) {
+        if ($articleId === null && $this->confirm('Do you want to link this technology to an article?', false)) {
             $articles = \App\Models\Article::all();
             
             if ($articles->isEmpty()) {
-                $this->warn('هیچ مقاله‌ای یافت نشد.');
+                $this->warn('No articles found.');
             } else {
-                $this->info('مقالات موجود:');
+                $this->info('Available articles:');
                 $articles->each(function ($article) {
                     $this->line("[{$article->id}] {$article->title}");
                 });
                 
-                $articleId = $this->ask('آی‌دی مقاله مرتبط را وارد کنید');
+                $articleId = $this->ask('Please enter the related article ID');
             }
         }
         
-        // ایجاد تکنولوژی
+        // Create technology
         $technology = Technology::create([
             'name' => $name,
             'title' => $title,
@@ -105,7 +105,7 @@ class MakeTechnology extends Command
             'article_id' => $articleId,
         ]);
         
-        $this->info("تکنولوژی '{$technology->name}' با موفقیت ایجاد شد. آی‌دی: {$technology->id}");
+        $this->info("Technology '{$technology->name}' created successfully. ID: {$technology->id}");
         
         return Command::SUCCESS;
     }

@@ -12,20 +12,20 @@ class UpdateTechnologySection extends Command
      *
      * @var string
      */
-    protected $signature = 'update:techsec {id : آی‌دی بخش تکنولوژی}
-                            {--name= : نام بخش تکنولوژی}
-                            {--title= : عنوان بخش تکنولوژی}
-                            {--description= : توضیحات بخش تکنولوژی}
-                            {--icon= : آیکون بخش تکنولوژی}
-                            {--lang= : زبان بخش تکنولوژی}
-                            {--article= : آی‌دی مقاله مرتبط (0 برای حذف ارتباط)}';
+    protected $signature = 'update:techsec {id : Technology section ID}
+                            {--name= : Technology section name}
+                            {--title= : Technology section title}
+                            {--description= : Technology section description}
+                            {--icon= : Technology section icon}
+                            {--lang= : Technology section language}
+                            {--article= : Related article ID (0 to remove link)}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'به‌روزرسانی یک بخش تکنولوژی موجود';
+    protected $description = 'Update an existing technology section';
 
     /**
      * Execute the console command.
@@ -34,55 +34,55 @@ class UpdateTechnologySection extends Command
     {
         $id = $this->argument('id');
         
-        // یافتن بخش تکنولوژی
+        // Find the technology section
         $section = TechnologySection::find($id);
         
         if (!$section) {
-            $this->error("بخش تکنولوژی با آی‌دی {$id} یافت نشد.");
+            $this->error("Technology section with ID {$id} not found.");
             return 1;
         }
         
-        $this->info("در حال ویرایش بخش تکنولوژی: {$section->name} (آی‌دی: {$section->id})");
+        $this->info("Editing technology section: {$section->name} (ID: {$section->id})");
         
-        // دریافت مقادیر برای به‌روزرسانی
+        // Get values for update
         $data = [];
         
         if ($this->option('name')) {
             $data['name'] = $this->option('name');
-        } elseif ($this->confirm('آیا می‌خواهید نام را به‌روزرسانی کنید؟', false)) {
-            $data['name'] = $this->ask('نام جدید را وارد کنید', $section->name);
+        } elseif ($this->confirm('Do you want to update the name?', false)) {
+            $data['name'] = $this->ask('Enter new name', $section->name);
         }
         
         if ($this->option('title')) {
             $data['title'] = $this->option('title');
-        } elseif ($this->confirm('آیا می‌خواهید عنوان را به‌روزرسانی کنید؟', false)) {
-            $data['title'] = $this->ask('عنوان جدید را وارد کنید', $section->title);
+        } elseif ($this->confirm('Do you want to update the title?', false)) {
+            $data['title'] = $this->ask('Enter new title', $section->title);
         }
         
         if ($this->option('description')) {
             $data['description'] = $this->option('description');
-        } elseif ($this->confirm('آیا می‌خواهید توضیحات را به‌روزرسانی کنید؟', false)) {
-            $data['description'] = $this->ask('توضیحات جدید را وارد کنید', $section->description);
+        } elseif ($this->confirm('Do you want to update the description?', false)) {
+            $data['description'] = $this->ask('Enter new description', $section->description);
         }
         
         if ($this->option('icon')) {
             $data['icon'] = $this->option('icon');
-        } elseif ($this->confirm('آیا می‌خواهید آیکون را به‌روزرسانی کنید؟', false)) {
-            $data['icon'] = $this->ask('آیکون جدید را وارد کنید', $section->icon);
+        } elseif ($this->confirm('Do you want to update the icon?', false)) {
+            $data['icon'] = $this->ask('Enter new icon', $section->icon);
         }
         
         if ($this->option('lang')) {
             $data['lang'] = $this->option('lang');
-        } elseif ($this->confirm('آیا می‌خواهید زبان را به‌روزرسانی کنید؟', false)) {
-            $data['lang'] = $this->choice('زبان جدید را انتخاب کنید', ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de'], array_search($section->lang, ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de']) ?: 0);
+        } elseif ($this->confirm('Do you want to update the language?', false)) {
+            $data['lang'] = $this->choice('Select new language', ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de'], array_search($section->lang, ['fa', 'en', 'ar', 'ru', 'fr', 'es', 'de']) ?: 0);
         }
         
-        // مدیریت article_id
+        // Manage article_id
         $articleIdOption = $this->option('article');
         if ($articleIdOption !== null) {
             $data['article_id'] = $articleIdOption == 0 ? null : $articleIdOption;
-        } elseif ($this->confirm('آیا می‌خواهید مقاله مرتبط را به‌روزرسانی کنید؟', false)) {
-            $removeArticle = $this->confirm('آیا می‌خواهید ارتباط با مقاله را حذف کنید؟', false);
+        } elseif ($this->confirm('Do you want to update the related article?', false)) {
+            $removeArticle = $this->confirm('Do you want to remove the link to the article?', false);
             
             if ($removeArticle) {
                 $data['article_id'] = null;
@@ -90,24 +90,24 @@ class UpdateTechnologySection extends Command
                 $articles = \App\Models\Article::all();
                 
                 if ($articles->isEmpty()) {
-                    $this->warn('هیچ مقاله‌ای یافت نشد.');
+                    $this->warn('No articles found.');
                 } else {
-                    $this->info('مقالات موجود:');
+                    $this->info('Available articles:');
                     $articles->each(function ($article) {
                         $this->line("[{$article->id}] {$article->title}");
                     });
                     
-                    $data['article_id'] = $this->ask('آی‌دی مقاله مرتبط را وارد کنید');
+                    $data['article_id'] = $this->ask('Enter related article ID');
                 }
             }
         }
         
-        // به‌روزرسانی بخش تکنولوژی اگر تغییراتی وجود دارد
+        // Update technology section if there are changes
         if (empty($data)) {
-            $this->info('هیچ تغییری در بخش تکنولوژی اعمال نشد.');
+            $this->info('No changes were made to the technology section.');
         } else {
             $section->update($data);
-            $this->info("بخش تکنولوژی '{$section->name}' با موفقیت به‌روزرسانی شد.");
+            $this->info("Technology section '{$section->name}' updated successfully.");
         }
         
         return Command::SUCCESS;

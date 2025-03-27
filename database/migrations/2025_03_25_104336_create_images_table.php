@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('original_filename')->nullable(); // Original filename
             $table->string('mime_type')->nullable(); // File type
             $table->integer('size')->nullable(); // File size (bytes)
-            $table->enum('imageable_type', ['Article', 'User']); // Model name (target table)
+            $table->enum('imageable_type', ['App\Models\Article', 'App\Models\User']); // Model name (target table)
             $table->unsignedBigInteger('imageable_id'); // Record ID in target table
             $table->string('alt_text')->nullable(); // Alternative text
             $table->timestamps();
