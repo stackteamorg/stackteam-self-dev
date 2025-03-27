@@ -19,15 +19,28 @@
             <div class="section-heading heading-light-left">
                 <span class="subtitle">{{ $section->name }}</span>
                 <h2 class="title">{{ $section->title }}</h2>
-                <p style="text-align: justify;">{{ $section->description }}</p>
+                <!-- <p style="text-align: justify;">{{ $section->description }}</p> -->
             </div>
             <div class="row">
                 @foreach($section->technologies as $technology)
-                <div class="col-lg-3 col-6" data-sal="slide-up" data-sal-duration="500">
-                    <div class="brand-grid">
-                        <a href="{{ route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}">
-                            <i class="{{ $technology->icon }}" style="font-size: 95px;"></i>
-                        </a>
+                <div class="col-lg-4 col-md-6" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
+                    <div class="services-grid active">
+                        <div class="thumbnail">
+                            @if($technology->article)
+                                <a href="{{ route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}">
+                                    <i class="{{ $technology->icon }}" style="font-size: 45px;"></i>
+                                </a>
+                            @else
+                                    <i class="{{ $technology->icon }}" style="font-size: 45px;"></i>
+                            @endif
+                        </div>
+                        <div class="content">
+                            <h5 class="title"><a href="{{ $technology->article ? route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) : '#' }}">{{ $technology->title }}</a></h5>
+                            <p>{{ $technology->description }}</p>
+                            @if($technology->article)
+                                <a href="{{ route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}" class="more-btn">اطلاعات بیشتر</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
                 @endforeach
