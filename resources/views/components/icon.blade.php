@@ -1,3 +1,1 @@
-<div>
-    <!-- Nothing worth having comes easy. - Theodore Roosevelt -->
-</div>
+<i class="{{ $src }}" style="font-size: {{ $width }}px;"></i>

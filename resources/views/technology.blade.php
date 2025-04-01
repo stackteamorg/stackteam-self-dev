@@ -28,10 +28,10 @@
                         <div class="thumbnail">
                             @if($technology->article)
                                 <a href="{{ route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}">
-                                    <i class="{{ $technology->icon }}" style="font-size: 45px;"></i>
+                                    <x-icon :src="$technology->icon" :width="100" :height="100" />
                                 </a>
                             @else
-                                    <i class="{{ $technology->icon }}" style="font-size: 45px;"></i>
+                                <x-icon :src="$technology->icon" :width="100" :height="100" />
                             @endif
                         </div>
                         <div class="content">
