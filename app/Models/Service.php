@@ -72,4 +72,5 @@ class Service extends Model
     {
         return $query->where('lang', $lang);
     }
+
 }
