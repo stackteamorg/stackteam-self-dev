@@ -19,7 +19,19 @@ class Article extends Controller
      */
     public function __invoke(Request $request)
     {
-        $articles = ArticleModel::latest()->paginate(10);
+        $query = ArticleModel::where('lang', app()->getLocale())
+                             ->where('status', 'published');
+                             
+        // Handle search functionality
+        if ($request->has('search') && !empty($request->search)) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('content', 'like', "%{$search}%");
+            });
+        }
+        
+        $articles = $query->latest()->paginate(10);
         return view('blog.index', compact('articles'));
     }
 
