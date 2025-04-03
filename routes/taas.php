@@ -17,3 +17,4 @@ Route::post('/brief', [Brief::class, 'store'])->name('brief.store');
 Route::get('/service', ServiceController::class)->name('service.index');
 
 Route::get('/technology', TechnologyController::class)->name('technology.index');
+Route::get('/technology/{name}/{slug}', [TechnologyController::class, 'show'])->name('technology.article');

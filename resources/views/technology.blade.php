@@ -27,7 +27,7 @@
                     <div class="services-grid active">
                         <div class="thumbnail">
                             @if($technology->article)
-                                <a href="{{ route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}">
+                                <a href="{{ route('technology.article', ['name' => $technology->name, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}">
                                     <x-icon :src="$technology->icon" :width="100" :height="100" />
                                 </a>
                             @else
