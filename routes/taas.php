@@ -4,7 +4,7 @@ use App\Http\Controllers\Brief;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TechnologyController;
-use PHPUnit\Architecture\Services\ServiceContainer;
+use App\Http\Controllers\ProcessController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +20,5 @@ Route::get('/service/{name}/{slug}', [ServiceController::class, 'show'])->name('
 
 Route::get('/technology', TechnologyController::class)->name('technology.index');
 Route::get('/technology/{name}/{slug}', [TechnologyController::class, 'show'])->name('technology.article');
+
+Route::get('/process', ProcessController::class)->name('process');
