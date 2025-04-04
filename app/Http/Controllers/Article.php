@@ -20,7 +20,7 @@ class Article extends Controller
     public function __invoke(Request $request)
     {
         $query = ArticleModel::where('lang', app()->getLocale())
-                             ->where('status', 'published');
+                             ->where('status', 'draft');
                              
         // Handle search functionality
         if ($request->has('search') && !empty($request->search)) {
