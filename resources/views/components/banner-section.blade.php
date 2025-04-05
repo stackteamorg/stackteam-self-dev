@@ -3,10 +3,13 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="banner-content" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">
-                    <h1 class="title">آژانس طراحی محصولات دیجیتال</h1>
-                    <span class="subtitle">بخش های زنده ایجاد کنید و افراد مناسب را هدف قرار دهید
-برای پیام هایی که بر اساس رفتارهایشان ارسال می شود.</span>
-                    <form>
+                    <h1 class="title">
+                        استک تیم
+                        <small style="font-size: 1.3rem; font-weight: 400;">تیم اختصاصی برای توسعه نرم‌افزار شما</small>
+                    </h1>
+                    
+                    <span class="subtitle" style="text-align: justify;">
+                            با <x-icon src="fa-solid fa-hashtag" width="14" height="14" /> <a href="{{ route('welcome',['locale' => app()->getLocale()]) }}">استک تیم</a>، بدون دغدغه استخدام، یک تیم کامل و حرفه‌ای برای طراحی و توسعه وب‌سایت یا اپلیکیشن خود داشته باشید. ما راهکار <code>Team as a Service (TaaS)</code> را به شما ارائه می‌دهیم. یعنی به جای برون‌سپاری پروژه به یک فریلنسر یا آژانس، یک تیم اختصاصی متناسب با نیاز پروژه‌تان در اختیار خواهید داشت                    <form>
                         <div class="input-group">
                             <input type="tel" class="form-control" placeholder=" شماره موبایل">
                             <button class="subscribe-btn" type="submit">شروع همکاری</button>

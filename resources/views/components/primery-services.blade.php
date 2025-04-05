@@ -3,7 +3,7 @@
     <ul class="category-list list-unstyled">
         @foreach($primaryServices as $service)
         <li>
-            <a href="{{ route('service.article', ['locale' => app()->getLocale(), 'name' => $service->name, 'slug' => $service->article->slug]) }}">
+            <a href="{{ $service->article ? route('service.article', ['locale' => app()->getLocale(), 'name' => $service->name, 'slug' => $service->article->slug]) : '#' }}">
                 <x-icon src="fa-solid fa-hashtag" :width="16" :height="16" /> {{ $service->title }}
             </a>
         </li>

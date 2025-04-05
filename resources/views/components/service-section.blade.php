@@ -11,11 +11,18 @@
                         <div class="thumbnail">
                             <x-icon :src="$service->icon" />
                         </div>
+                        @if($service->article)
                         <div class="content">
                             <h5 class="title"> <a href="{{ route('service.article', ['locale' => app()->getLocale(), 'name' => $service->name, 'slug' => $service->article->slug]) }}">{{ $service->title }}</a></h5>
-                            <p>{{ $service->description }}</p>
+                            <p style="text-align: justify;">{{ $service->description }}</p>
                             <a href="{{ route('service.article', ['locale' => app()->getLocale(), 'name' => $service->name, 'slug' => $service->article->slug]) }}" class="more-btn">بیشتر بدانید</a>
                         </div>
+                        @else
+                        <div class="content">
+                            <h5 class="title"> {{ $service->title }}</h5>
+                            <p style="text-align: justify;">{{ $service->description }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
             @endforeach
