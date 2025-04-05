@@ -23,4 +23,26 @@ return [
         ],
     ],
 
+    'process_steps' => [
+        [
+            'title' => 'کشف کردن',
+            'description' => 'استراتژی جامع طراحی لوگو ما تضمین می کند که یک آرم کاملاً ساخته شده برای تجارت شما ایجاد شود.',
+            'image' => 'abstrak/media/others/process-1.png'
+        ],
+        [
+            'title' => 'نمونه اولیه',
+            'description' => 'استراتژی جامع طراحی لوگو ما تضمین می کند که یک آرم کاملاً ساخته شده برای تجارت شما ایجاد شود.',
+            'image' => 'abstrak/media/others/process-2.png'
+        ],
+        [
+            'title' => 'تست',
+            'description' => 'استراتژی جامع طراحی لوگو ما تضمین می کند که یک آرم کاملاً ساخته شده برای تجارت شما ایجاد شود.',
+            'image' => 'abstrak/media/others/process-3.png'
+        ],
+        [
+            'title' => 'ساخت',
+            'description' => 'استراتژی جامع طراحی لوگو ما تضمین می کند که یک آرم کاملاً ساخته شده برای تجارت شما ایجاد شود.',
+            'image' => 'abstrak/media/others/process-4.png'
+        ]
+    ],
 ]; 

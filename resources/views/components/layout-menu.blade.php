@@ -21,7 +21,7 @@
                 <li><a href="{{ route('service.index', App::currentLocale()) }}">{{ __('taas.menu.services') }}</a></li>
                 <li><a href="{{ route('technology.index', App::currentLocale()) }}">{{ __('taas.menu.technologies') }}</a></li>
                 <li><a href="{{ route('blog.index',App::currentLocale()) }}">{{ __('taas.menu.blog') }}</a></li>
-                <li><a href="contact.html">{{ __('taas.menu.about-us') }}</a></li>
+                <li><a href="{{ route('about', ['locale' => App::currentLocale()]) }}">{{ __('taas.menu.about-us') }}</a></li>
                 <li><a href="{{ route('process', ['locale' => App::currentLocale()]) }}">{{ __('taas.menu.process') }}</a></li>
                 <x-language-bar />
             </ul>

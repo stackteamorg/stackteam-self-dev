@@ -4,7 +4,11 @@
             <div class="col-lg-6">
                 <div class="why-choose-us">
                     <div class="section-heading heading-left">
+                        @if($heading)
+                        <h1 class="subtitle h3">{{ __('about.title') }}</h1>
+                        @else
                         <span class="subtitle">{{ __('about.title') }}</span>
+                        @endif
                         <p style="text-align: justify;">
                             {{ __('about.description') }}
                             {{ __('about.details') }}

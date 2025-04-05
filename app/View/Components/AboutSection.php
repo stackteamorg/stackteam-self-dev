@@ -10,10 +10,15 @@ class AboutSection extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param bool $heading
      */
-    public function __construct()
+
+    public bool $heading;
+
+    public function __construct(bool $heading = false)
     {
-        //
+        $this->heading = $heading;
     }
 
     /**

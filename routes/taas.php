@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Brief;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
@@ -22,3 +23,4 @@ Route::get('/technology', TechnologyController::class)->name('technology.index')
 Route::get('/technology/{name}/{slug}', [TechnologyController::class, 'show'])->name('technology.article');
 
 Route::get('/process', ProcessController::class)->name('process');
+Route::get('/about', AboutController::class)->name('about');
