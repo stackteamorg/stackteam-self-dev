@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Article;
+use App\Http\Controllers\CallActionController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,5 @@ Route::post('blog/upload-image', [Article::class, 'uploadImage'])->name('article
 Route::post('user/upload-profile-image', [UserProfileController::class, 'uploadProfileImage'])->name('user.upload-profile-image');
 
 
-
-
-
-
+// Route for saving call requests
+Route::post('/call-request', CallActionController::class)->name('call.request');

@@ -93,12 +93,7 @@
                                 <div class="footer-newsletter">
                                     <h2 class="title">با ما در ارتباط باشید!</h2>
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است</p>
-                                    <form>
-                                        <div class="input-group">
-                                            <input type="tel" class="form-control" placeholder=" شماره موبایل">
-                                            <button class="subscribe-btn" type="submit">شروع همکاری</button>
-                                        </div>
-                                    </form>
+                                    <x-call-action buttonText="شروع همکاری" id="footer" />
                                 </div>
                             </div>
                         </div>

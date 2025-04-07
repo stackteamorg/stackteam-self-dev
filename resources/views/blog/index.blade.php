@@ -57,10 +57,7 @@
                         <div class="axil-sidebar">
                             <div class="widget widget-search">
                                 <h4 class="widget-title"><i class="fa-solid fa-hashtag"></i> همکاری</h4>
-                                <form class="input-group">
-                                    <input type="tel" class="form-control" placeholder=" شماره موبایل">
-                                    <button class="subscribe-btn" type="submit">شروع</button>
-                                </form>
+                                <x-call-action buttonText="شروع" />
                             </div>
 
                             <x-article-categories />

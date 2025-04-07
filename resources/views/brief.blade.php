@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-6">
                         <div class="contact-form-box shadow-box mb--30">
-                            <h3 class="title">{{ __('brief.get_free_quote') }}</h3>
+                            <h3 class=" h4" style="text-align: justify;">{{ __('brief.get_free_quote') }}</h3>
                             @if(session('success'))
                                 <div class="alert alert-success mb-4">
                                     {{ session('success') }}
@@ -45,14 +45,19 @@
                     </div>
                     <div class="col-xl-5 col-lg-6 offset-xl-1">
                         <div class="contact-info mb--100 mb_md--30 mt_md--0 mt--150">
-                            <h4 class="title">{{ __('brief.phone') }}</h4>
+                            <h4 class="title"><i class="fa-duotone fa-solid fa-phone-office"></i></i> تلفن دفتر دبی</h4>
                             <p>{{ __('brief.customer_service_hours') }}</p>
-                            <h4 class="phone-number"><a href="tel:1234567890">(۱۲۳) ۴۵۶ ۷۸۹۰</a></h4>
-                        </div>
-                        <div class="contact-info mb--30">
-                            <h4 class="title">{{ __('brief.email') }}</h4>
-                            <p>{{ __('brief.support_response') }}</p>
-                            <h4 class="phone-number"><a href="mailto:info@example.com">info@example.com</a></h4>
+                            <h4 class="phone-number">
+                                <img src="{{ asset('abstrak/media/flags/ar.svg') }}" alt="واتساپ" style="width: 60px; height: 60px;">
+                                <a href="tel:1234567890" style="direction: ltr;">(+971) 58 155 4476</a>
+                            </h4>                        </div>
+                        <div class="contact-info mb--100 mb_md--30 mt_md--0 mt--150">
+                            <h4 class="title"><i class="fa-duotone fa-solid fa-phone-office"></i></i> تلفن دفتر تهران</h4>
+                            <p>{{ __('brief.customer_service_hours') }}</p>
+                            <h4 class="phone-number">
+                                <img src="{{ asset('abstrak/media/flags/fa.svg') }}" alt="واتساپ" style="width: 60px; height: 60px;">
+                                <a href="tel:1234567890" style="direction: ltr;">(+98) 912 0186 223</a>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -67,7 +72,7 @@
         <!--=====================================-->
         <!--=       بخش مکان شروع می‌شود        =-->
         <!--=====================================-->
-        <section class="section section-padding bg-color-dark overflow-hidden">
+        {{-- <section class="section section-padding bg-color-dark overflow-hidden">
             <div class="container">
                 <div class="section-heading heading-light-left">
                     <span class="subtitle">{{ __('brief.find_us') }}</span>
@@ -101,5 +106,5 @@
                 <li class="shape shape-1"><img src="{{ asset('abstrak/media/others/line-6.png') }}" alt="خط"></li>
                 <li class="shape shape-2"><img src="{{ asset('abstrak/media/others/circle-3.png') }}" alt="خط"></li>
             </ul>
-        </section>
+        </section> --}}
 </x-web-layout>
