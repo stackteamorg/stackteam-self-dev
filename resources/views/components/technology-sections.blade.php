@@ -1,6 +1,6 @@
 @foreach($technologySections as $section)
 <div class="widget widget-categories">
-    <h4 class="widget-title"><x-icon src="fa-solid fa-hashtag" :width="32" :height="32" /> {{ $section->title }}</h4>
+    <h4 class="widget-title h5"><i class="fa-solid fa-hashtag"></i> {{ $section->title }}</h4>
     <ul class="category-list list-unstyled">
         @foreach($section->technologies as $technology)
             @if($technology->article)

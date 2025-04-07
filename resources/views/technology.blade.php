@@ -28,17 +28,17 @@
                         <div class="thumbnail">
                             @if($technology->article)
                                 <a href="{{ route('technology.article', ['name' => $technology->name, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}">
-                                    <x-icon :src="$technology->icon" :width="100" :height="100" />
+                                    <x-icon :src="$technology->icon" :width="100" :height="100" alt="{{ $technology->title }}" />
                                 </a>
                             @else
-                                <x-icon :src="$technology->icon" :width="100" :height="100" />
+                                    <x-icon :src="$technology->icon" :width="100" :height="100" alt="{{ $technology->title }}" />
                             @endif
                         </div>
                         <div class="content">
-                            <h5 class="title"><a href="{{ $technology->article ? route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) : '#' }}">{{ $technology->title }}</a></h5>
+                            <h5 class="title"><a href="{{ $technology->article ? route('technology.article', ['name' => $technology->name, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) : '#' }}">{{ $technology->title }}</a></h5>
                             <p>{{ $technology->description }}</p>
                             @if($technology->article)
-                                <a href="{{ route('blog.article', ['id' => $technology->article->id, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}" class="more-btn">اطلاعات بیشتر</a>
+                                <a href="{{ route('technology.article', ['name' => $technology->name, 'locale' => app()->getLocale(), 'slug' => $technology->article->slug]) }}" class="more-btn">اطلاعات بیشتر</a>
                             @endif
                         </div>
                     </div>

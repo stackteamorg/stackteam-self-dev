@@ -10,10 +10,10 @@
                 {{ $author->name }}
             </h5>
             @if($author->headline)
-            <small style="display: inline;">{{ $author->headline }}</small>
+            <small style="display: inline;"><code>{{ $author->headline }}</code></small>
             @endif
             <br><br>
-            <p>{{ $author->biography ?? 'نویسنده سایت' }}</p>
+            <p style="text-align: justify;">{{ $author->biography ?? 'نویسنده سایت' }}</p>
             @if($author->location)
             <i class="fa-solid fa-location-dot" style="display: inline;"></i><p style="display: inline; margin-right: 10px;" class="location">{{ $author->location }}</p>
             @endif
