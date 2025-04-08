@@ -14,7 +14,7 @@ class Article extends Model
 {
     use HasFactory, HasImages;
 
-    protected $fillable = ['title', 'icon', 'slug', 'content', 'author_id', 'category_id', 'lang', 'image'];
+    protected $fillable = ['title', 'icon', 'slug', 'content', 'author_id', 'category_id', 'lang', 'image', 'description'];
 
     public function author()
     {

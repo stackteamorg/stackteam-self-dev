@@ -7,12 +7,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TechnologyController;
 use App\Http\Controllers\ProcessController;
+use App\Http\Controllers\Welcome;
 
-Route::get('/', function () {
-    return view('welcome');
-    
-})->name('welcome');
-
+Route::get('/', Welcome::class)->name('welcome');
 
 Route::get('/brief', Brief::class)->name('brief');
 Route::post('/brief', [Brief::class, 'store'])->name('brief.store');

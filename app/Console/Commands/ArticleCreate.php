@@ -56,6 +56,7 @@ class ArticleCreate extends Command
     {
         
         $title = $this->ask('Enter article title');
+        $description = $this->ask('Enter article description'); // Get the description value
 
         // Set the language of the article
         $lang = $this->choice('Select article language', ['fa', 'en', 'ar'], 0);
@@ -65,6 +66,7 @@ class ArticleCreate extends Command
 
         $data = [
             'title' => $title,
+            'description' => $description, // Adding description to the data
             'content' => $this->getArticleContent(),
             'lang' => $lang,
             'slug' => $slug,
@@ -76,20 +78,20 @@ class ArticleCreate extends Command
     }
 
     /**
-     * ایجاد اسلاگ با جایگزینی فضای خالی با خط تیره
+     * Create a slug by replacing spaces with hyphens
      *
      * @param string $title
      * @return string
      */
     private function createSlug(string $title): string
     {
-        // حذف کاراکترهای غیر مجاز و جایگزینی با خط تیره
+        // Remove invalid characters and replace with hyphens
         $slug = preg_replace('/[^\p{L}\p{N}]+/u', '-', $title);
         
-        // حذف خط تیره‌های اضافی از ابتدا و انتهای رشته
+        // Remove extra hyphens from the beginning and end of the string
         $slug = trim($slug, '-');
         
-        // اگر اسلاگ خالی شد، یک مقدار پیش‌فرض برگردان
+        // If the slug is empty, return a default value
         if (empty($slug)) {
             return 'untitled';
         }
@@ -169,6 +171,7 @@ class ArticleCreate extends Command
             'title' => 'required|string|max:255',
             'slug' => 'required|string|unique:articles,slug',
             'content' => 'required|string',
+            'description' => 'required|string|min:50|max:160', // Description must be between 50 and 160 characters
             'lang' => 'required|string|in:fa,en,ar',
         ]);
     }
@@ -200,6 +203,7 @@ class ArticleCreate extends Command
             'title' => $data['title'],
             'slug' => $data['slug'],
             'content' => $data['content'],
+            'description' => $data['description'], // Save description in the database
             'author_id' => $data['author_id'],
             'category_id' => $data['category_id'],
             'lang' => $data['lang'],

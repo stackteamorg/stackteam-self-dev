@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Services\Metatag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class ServiceController extends Controller
 {
@@ -25,7 +27,7 @@ class ServiceController extends Controller
         return view('service', compact('primaryServices'));
     }
 
-    public function show()
+    public function show(Metatag $metatag)
     {
         $locale = app()->getLocale();
         
@@ -38,6 +40,12 @@ class ServiceController extends Controller
             }])
             ->firstOrFail();
 
+
+        $metatag->setTitle(Lang::get('metatags.public.site_name') . ' | ' . $service->article->title);
+        $metatag->setDescription($service->article->description);
+        $metatag->setAuthor($service->article->author->name);
+        $metatag->setType('article');
+        
         //dd($service->toArray());
         return view('service.show', ['service' => $service, 'article' => $service->article]);
     }

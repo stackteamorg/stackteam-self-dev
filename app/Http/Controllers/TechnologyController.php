@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Technology;
 use App\Models\TechnologySection;
+use App\Services\Metatag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class TechnologyController extends Controller
 {
@@ -32,7 +34,7 @@ class TechnologyController extends Controller
      * @param string $name
      * @return \Illuminate\View\View
      */
-    public function show()
+    public function show(Metatag $metatag)
     {
         $locale = app()->getLocale();
 
@@ -47,7 +49,10 @@ class TechnologyController extends Controller
         ->where('lang', $locale)
         ->get();
 
-        //dd($technologySections->toArray());
+        $metatag->setTitle(Lang::get('metatags.public.site_name') . ' | ' . $technology->article->title);
+        $metatag->setDescription($technology->article->description);
+        $metatag->setAuthor($technology->article->author->name);
+        $metatag->setType('article');
 
         return view('technology.show', [
             'technology' => $technology,

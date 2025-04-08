@@ -1,0 +1,20 @@
+{
+    "name": "Stack Team",
+    "short_name": "StackTeam",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#5956E9",
+    "icons": [
+      {
+        "src": "/favicon/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

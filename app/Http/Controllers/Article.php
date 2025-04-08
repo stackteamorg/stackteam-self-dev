@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article as ArticleModel;
 use App\Models\Image;
+use App\Services\Metatag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -19,6 +21,7 @@ class Article extends Controller
      */
     public function __invoke(Request $request)
     {
+
         $query = ArticleModel::where('lang', app()->getLocale())
                              ->where('status', 'published')
                              ->whereNotNull('category_id');
@@ -43,7 +46,7 @@ class Article extends Controller
      * @param string $id
      * @return \Illuminate\View\View
      */
-    public function show(Request $request)
+    public function show(Metatag $metatag)
     {
         $article = ArticleModel::findOrFail((int) request()->route('id'));
         
@@ -59,6 +62,11 @@ class Article extends Controller
         if ($article->status !== 'published' && !$isAuthorizedUser) {
             abort(404);
         }
+
+        $metatag->setTitle(Lang::get('metatags.public.site_name') . ' | ' . $article->title);
+        $metatag->setDescription($article->description);
+        $metatag->setAuthor($article->author->name);
+        $metatag->setType('article');
         
         return view('blog.article', compact('article'));
     }
