@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Article;
 use App\Http\Middleware\SetLocale;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TechnologyController;
@@ -38,6 +37,11 @@ Route::middleware([SetLocale::class])->group(function () {
 
     Route::prefix('{locale}/blog')
         ->group(base_path('routes/blog.php'));
+
+    Route::any('/', function () {
+
+        return redirect()->to('/fa');
+    });
 
 });
 

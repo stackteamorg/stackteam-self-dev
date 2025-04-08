@@ -1,6 +1,6 @@
 <div class="header-navbar">
     <div class="header-logo">
-        <h6 style="margin: 0 0 0px"><i class="fa-solid fa-brackets-curly"></i> استک تیم</h6>
+        <h6 style="margin: 0; "><a href="{{ route('welcome',['locale' => App::currentLocale()]) }}"><i class="fa-solid fa-duotone fa-brackets-curly"></i> استک تیم</a></h6>
     </div>
     <div class="header-main-nav">
         <!-- Start Mainmanu Nav -->
@@ -17,13 +17,13 @@
                 </div>
             </div>
             <ul class="mainmenu">
-                <li><a href="{{ route('welcome',App::currentLocale()) }}"><i class="fa-solid fa-house-heart"></i></a></li>
+                <li><a href="{{ route('welcome',App::currentLocale()) }}"><i class="fa-solid fa-duotone fa-house-heart"></i></a></li>
                 <li><a href="{{ route('service.index', App::currentLocale()) }}">{{ __('taas.menu.services') }}</a></li>
                 <li><a href="{{ route('technology.index', App::currentLocale()) }}">{{ __('taas.menu.technologies') }}</a></li>
                 <li><a href="{{ route('blog.index',App::currentLocale()) }}">{{ __('taas.menu.blog') }}</a></li>
                 <li><a href="{{ route('about', ['locale' => App::currentLocale()]) }}">{{ __('taas.menu.about-us') }}</a></li>
                 <li><a href="{{ route('process', ['locale' => App::currentLocale()]) }}">{{ __('taas.menu.process') }}</a></li>
-                <x-language-bar />
+                {{-- <x-language-bar /> --}}
             </ul>
         </nav>
         <!-- End Mainmanu Nav -->

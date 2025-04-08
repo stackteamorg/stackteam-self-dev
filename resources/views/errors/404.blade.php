@@ -8,8 +8,10 @@
                 <div class="col-lg-6">
                     <div class="content" data-sal="slide-up" data-sal-duration="800" data-sal-delay="400">
                         <h2 class="title">صفحه ای یافت نشد</h2>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-                        <a href="{{ route('welcome',['locale' => app()->getLocale()]) }}" class="axil-btn btn-fill-primary">صفحه خانه</a>
+                        <span class="subtitle" style="text-align: justify;">
+                            با <x-icon src="fa-duotone fa-solid fa-hashtag" width="14" height="14" /> <a href="{{ route('welcome',['locale' => app()->getLocale()]) }}">استک تیم</a>، بدون دغدغه استخدام، یک تیم کامل و حرفه‌ای برای طراحی و توسعه وب‌سایت یا اپلیکیشن خود داشته باشید. ما راهکار <code>Team as a Service (TaaS)</code> را به شما ارائه می‌دهیم. یعنی به جای برون‌سپاری پروژه به یک فریلنسر یا آژانس، یک تیم اختصاصی متناسب با نیاز پروژه‌تان در اختیار خواهید داشت  
+                        </span>                            
+                        <a href="{{ route('welcome',['locale' => app()->getLocale()]) }}" class="axil-btn btn-fill-primary" style="margin-top: 20px;">صفحه خانه</a>
                     </div>
                 </div>
                 <div class="col-lg-6">

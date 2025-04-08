@@ -3,9 +3,12 @@
     {{-- <x-article-breadcrum :article="$article" /> --}}
 
     <x-breadcrum-area>
-        <li><a href="{{ route('welcome', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-house-heart"></i> صفحه خانه</a></li>
-        <li><a href="{{ route('blog.index', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-hashtag"></i> بلاگ </a></li>
-        <li class="active"><i class="fa-solid fa-hashtag"></i> {{ $article->category->title }}</li>
+        <li><a href="{{ route('welcome', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-duotone fa-house-heart"></i> صفحه خانه</a></li>
+        <li><a href="{{ route('blog.index', ['locale' => app()->getLocale()]) }}"><i class="fa-duotone fa-solid fa-hashtag"></i> بلاگ </a></li>
+        <li class="active"><i class="fa-duotone fa-solid fa-hashtag"></i> {{ $article->category->title }}</li>
+        <x-slot name="title">
+            <i class="fa-duotone fa-solid fa-hashtag"></i> {{ $article->title }}
+        </x-slot>
     </x-breadcrum-area>
     
     <!--=====================================-->
@@ -25,7 +28,7 @@
                 <div class="col-lg-4">
                     <div class="axil-sidebar">
                         <div class="widget widget-search">
-                            <h4 class="widget-title"><i class="fa-solid fa-hashtag"></i> همکاری</h4>
+                            <h4 class="widget-title"><i class="fa-duotone fa-solid fa-hashtag"></i> همکاری</h4>
                             <x-call-action buttonText="شروع" />
                         </div>
                         <x-article-categories />

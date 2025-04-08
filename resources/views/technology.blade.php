@@ -2,11 +2,11 @@
     <x-breadcrum-area>
         <li>
             <a href="{{ route('welcome', ['locale' => app()->getLocale()]) }}">
-                <i class="fa-solid fa-house-heart"></i> صفحه خانه
+                <i class="fa-solid fa-duotone fa-house-heart"></i> صفحه خانه
             </a>
         </li>
         <li class="active">
-            <i class="fa-solid fa-hashtag"></i> تکنولوژی های استک تیم 
+            <i class="fa-solid fa-duotone fa-hashtag"></i> تکنولوژی های استک تیم 
         </li>
         <x-slot name="description">
             استک تیم در توسعه پروژه‌های خود از آخرین تکنولوژی‌های روز دنیا استفاده می‌کند تا محصولی با کیفیت و قدرتمند به مشتریان ارائه دهد. 🚀

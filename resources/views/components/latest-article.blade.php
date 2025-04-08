@@ -1,5 +1,5 @@
 <div class="widget widget-recent-post">
-    <h4 class="widget-title h5"><i class="fa-solid fa-hashtag"></i> آخرین مقالات{{ $category ? ' in ' . $category->title : '' }}</h4>
+    <h4 class="widget-title h5"><i class="fa-duotone fa-solid fa-hashtag"></i> آخرین مقالات{{ $category ? ' in ' . $category->title : '' }}</h4>
     <div class="post-list-wrap">
         @forelse ($articles as $article)
             <div class="single-post">

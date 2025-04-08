@@ -38,6 +38,7 @@ class LatestArticle extends Component
         // Query to get latest articles
         $query = Article::where('lang', $locale)
                       ->where('status', 'published')
+                      ->whereNotNull('category_id') // Ensure category_id is not null
                       ->orderBy('created_at', 'desc');
         
         // If a specific category is provided, filter by that category

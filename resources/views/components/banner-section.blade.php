@@ -9,11 +9,14 @@
                     </h1>
                     
                     <span class="subtitle" style="text-align: justify;">
-                            با <x-icon src="fa-solid fa-hashtag" width="14" height="14" /> <a href="{{ route('welcome',['locale' => app()->getLocale()]) }}">استک تیم</a>، بدون دغدغه استخدام، یک تیم کامل و حرفه‌ای برای طراحی و توسعه وب‌سایت یا اپلیکیشن خود داشته باشید. ما راهکار <code>Team as a Service (TaaS)</code> را به شما ارائه می‌دهیم. یعنی به جای برون‌سپاری پروژه به یک فریلنسر یا آژانس، یک تیم اختصاصی متناسب با نیاز پروژه‌تان در اختیار خواهید داشت                    <form>
-                                <div style="margin-top: 20px;">
-                                <x-call-action buttonText="درخواست همکاری" />
-                                </div>
-                    </form>                   
+                            با <x-icon src="fa-duotone fa-solid fa-hashtag" width="14" height="14" /> <a href="{{ route('welcome',['locale' => app()->getLocale()]) }}">استک تیم</a>، بدون دغدغه استخدام، یک تیم کامل و حرفه‌ای برای طراحی و توسعه وب‌سایت یا اپلیکیشن خود داشته باشید. ما راهکار <code>Team as a Service (TaaS)</code> را به شما ارائه می‌دهیم. یعنی به جای برون‌سپاری پروژه به یک فریلنسر یا آژانس، یک تیم اختصاصی متناسب با نیاز پروژه‌تان در اختیار خواهید داشت 
+                    
+                        <form>
+                            <div style="margin-top: 20px;">
+                            <x-call-action buttonText="درخواست همکاری" />
+                            </div>
+                        </form>   
+                    </span>                
                  </div>
             </div>
             <div class="col-lg-6">

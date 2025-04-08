@@ -1,7 +1,7 @@
 <x-web-layout>
     <x-breadcrum-area>
-        <li><a href="{{ route('welcome', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-house-heart"></i> صفحه خانه</a></li>
-        <li class="active"><i class="fa-solid fa-hashtag"></i> خدمات استک تیم </li>
+        <li><a href="{{ route('welcome', ['locale' => app()->getLocale()]) }}"><i class="fa-solid fa-duotone fa-house-heart"></i> صفحه خانه</a></li>
+        <li class="active"><i class="fa-solid fa-duotone fa-hashtag"></i> خدمات استک تیم </li>
         <x-slot name="description">خدمات Team as a Service (TaaS) یک مدل نوین برای تأمین نیروی انسانی در پروژه‌های فناوری و توسعه نرم‌افزار است. در این مدل، شرکت‌ها به جای استخدام نیروی داخلی، یک تیم حرفه‌ای و متخصص را به‌صورت برون‌سپاری و ماهیانه در اختیار می‌گیرند 🚀</x-slot>
     </x-breadcrum-area>
     
