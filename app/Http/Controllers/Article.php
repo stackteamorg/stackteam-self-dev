@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article as ArticleModel;
+use App\Models\Category;
 use App\Models\Image;
 use App\Services\Metatag;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +38,34 @@ class Article extends Controller
         
         $articles = $query->latest()->paginate(10);
         return view('blog.index', compact('articles'));
+    }
+
+    public function category(Request $request, Metatag $metatag)
+    {
+
+
+        $category = Category::where('name', request()->route('name'))->first();
+
+        $metatag->setTitle(Lang::get('metatags.blog-index.title') . ' | '  . $category->title);
+        $metatag->setDescription($category->description);
+        $metatag->setType('article');
+
+        $query = ArticleModel::where('lang', app()->getLocale())
+                             ->where('status', 'published')
+                             ->where('category_id', $category->id);
+                             
+        // Handle search functionality
+        if ($request->has('search') && !empty($request->search)) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('content', 'like', "%{$search}%");
+            });
+        }
+        
+        $articles = $query->latest()->paginate(10);
+
+        return view('blog.index', ['articles' => $articles, 'category' => $category]);
     }
 
     /**
