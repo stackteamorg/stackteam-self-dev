@@ -8,12 +8,9 @@
             <div class="d-block d-lg-none">
                 <div class="mobile-nav-header">
                     <div class="mobile-nav-logo">
-                        <a href="index-1.html">
-                            <img class="light-mode" src="{{ asset('abstrak/media/logo-2.svg') }}" alt="Site Logo">
-                            <img class="dark-mode" src="{{ asset('abstrak/media/logo-3.svg') }}" alt="Site Logo">
-                        </a>
+                        <a href="{{ route('welcome',['locale' => App::currentLocale()]) }}"><i class="fa-solid fa-duotone fa-brackets-curly"></i> استک تیم</a> 
                     </div>
-                    <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
+                    <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fa-solid fa-duotone fa-power-off"></i></button>
                 </div>
             </div>
             <ul class="mainmenu">

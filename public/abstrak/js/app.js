@@ -25,7 +25,7 @@
             axilInit.counterUp();
             axilInit.axilSlickActivation();
             axilInit.magnificPopupActivation();
-            axilInit.countdownInit('.countdown', '2022/12/01');
+            axilInit.countdownInit('.countdown', '2021/12/01');
             axilInit.tiltAnimation();
             axilInit.menuLinkActive();
             axilInit.audioPlayerActivation();
@@ -34,11 +34,7 @@
             axilInit.marqueImages();
             axilInit.axilHover();
             axilInit.onePageTopFixed();
-            axilInit.blogModalActivation();
-            axilInit.portfolioModalActivation();
-            axilInit.caseModalActivation();
-            axilInit.themeColorSet();
-           
+
         },
 
         w: function(e) {
@@ -96,20 +92,6 @@
             });
         },
 
-        themeColorSet: function() {
-
-            var defaultColor = 'active-light-mode';
-
-            if ($('body').hasClass('active-dark-mode')) {
-                $('body').removeClass('active-light-mode');
-            }else if ($('body').hasClass('active-light-mode')) {
-                $('body').removeClass('active-dark-mode');
-            }else {
-                $('body').addClass(defaultColor);
-            }
-
-        },
-
         stickyHeaderMenu: function() {
 
             $(window).on('scroll', function() {
@@ -133,42 +115,28 @@
 
         mobileMenuActivation: function(e) {
 
-            $('.menu-item-has-children > a').append('<span class="submenu-toggle-btn"></span>' );
-            
-            $('.menu-item-has-children > a .submenu-toggle-btn').on('click', function(e) {
-                
-                var targetParent = $(this).parents('.mainmenu-nav'),
-                    target = $(this).parent().siblings('.axil-submenu'),
-                    targetSiblings = $(this).parents('.menu-item-has-children').siblings().find('.axil-submenu');
-                
-                if (targetParent.hasClass('offcanvas')) {
-                    $(target).slideToggle(400);
-                    $(targetSiblings).slideUp(400);
-                    $(this).parents('.menu-item-has-children').toggleClass('open');
-                    $(this).parents('.menu-item-has-children').siblings().removeClass('open');
-                }
-
-            });
-           
             function resizeClassAdd() {
-                if (window.matchMedia('(min-width: 992px)').matches) {
-                    $('body').removeClass('mobilemenu-active');
-                    $('#mobilemenu-popup').removeClass('offcanvas show').removeAttr('style');
-                    $('.axil-mainmenu .offcanvas-backdrop').remove();
-                    $('.axil-submenu').removeAttr('style');
-                } else {
-                    $('body').addClass('mobilemenu-active');
-                    $('#mobilemenu-popup').addClass('offcanvas');
-                    $('.menu-item-has-children > a').on('click', function(e) {
-                        e.preventDefault();
+                if (window.matchMedia('(max-width: 991px)').matches) {
+                    $('.main-wrapper').on('click','.menu-item-has-children a', function(e) {
+
+                        var targetParent = $(this).parents('.mainmenu-nav'),
+                            target = $(this).siblings('.axil-submenu'),
+                            targetSiblings = $(this).parent('.menu-item-has-children').siblings().find('.axil-submenu');
+
+                        $(target).slideToggle(400);
+
+                        $(targetSiblings).slideUp(400);
+
+                        $(this).parent('.menu-item-has-children').toggleClass('open');
+
                     });
+                    // $('#mobilemenu-popup').addClass('offcanvas');
+                }else {
+                    $('#mobilemenu-popup').removeClass('offcanvas');
+
                 }
             }
 
-            $(window).on('resize', function() {
-                resizeClassAdd();
-            });
-            
             resizeClassAdd();
         },
 
@@ -188,7 +156,7 @@
                         filter: filterValue
                     });
                 });
-                
+
                 // init Isotope
                 var $grid = $('.isotope-list').isotope({
                     itemSelector: '.project',
@@ -201,7 +169,7 @@
                     }
                 });
             });
-        
+
             $('.isotope-button button').on('click', function (event) {
                 $(this).siblings('.is-checked').removeClass('is-checked');
                 $(this).addClass('is-checked');
@@ -223,20 +191,14 @@
         },
 
         counterUp: function () {
-			
-            var elementSelector = $('.count');
-            elementSelector.each(function(){
-                elementSelector.appear(function(e) {
-                    var el = this;
-                    var updateData = $(el).attr("data-count");
-                    var od = new Odometer({
-                        el: el,
-                        format: 'd',
-                        duration: 2000
-                    });
-                    od.update(updateData);
+            var _counter = $('.count');
+            if (_counter.length) {
+                _counter.counterUp({
+                    delay: 10,
+                    time: 1000,
+                    triggerOnce: true
                 });
-            });
+            }
         },
 
         axilSlickActivation: function(e) {
@@ -264,13 +226,13 @@
                 eventCounter.countdown(countdownTime, function(e) {
                     $(this).html(
                         e.strftime(
-                            "<div class='countdown-section'><div><div class='countdown-number'>%D</div> <div class='countdown-unit'>Day%!D</div> </div></div><div class='countdown-section'><div><div class='countdown-number'>%H</div> <div class='countdown-unit'>Hour%!H</div> </div></div><div class='countdown-section'><div><div class='countdown-number'>%M</div> <div class='countdown-unit'>Minutes</div> </div></div><div class='countdown-section'><div><div class='countdown-number'>%S</div> <div class='countdown-unit'>Seconds</div> </div></div>"
+                            "<div class='countdown-section'><div><div class='countdown-number'>%D</div> <div class='countdown-unit'>روز</div> </div></div><div class='countdown-section'><div><div class='countdown-number'>%H</div> <div class='countdown-unit'>ساعت</div> </div></div><div class='countdown-section'><div><div class='countdown-number'>%M</div> <div class='countdown-unit'>دقیقه</div> </div></div><div class='countdown-section'><div><div class='countdown-number'>%S</div> <div class='countdown-unit'>ثانیه </div> </div></div>"
                         )
                     );
                 });
             }
         },
-        
+
         tiltAnimation: function () {
             var _tiltAnimation = $('.paralax-image');
             if (_tiltAnimation.length) {
@@ -292,7 +254,7 @@
                 var $this = $(this);
                 if($this.attr('href') === current){
                     $this.addClass('active');
-                    $this.parents('.menu-item-has-children').addClass('menu-item-open open')
+                    $this.parents('.menu-item-has-children').addClass('menu-item-open')
                 }
             });
         },
@@ -319,20 +281,38 @@
             var yearlySelectBtn = $('#yearly-plan-btn'),
                 monthlySelectBtn = $('#monthly-plan-btn'),
                 monthlyPrice = $('.monthly-pricing'),
-                yearlyPrice = $('.yearly-pricing');
-               
-            
+                yearlyPrice = $('.yearly-pricing'),
+                buttonSlide = $('#pricing-checkbox');
+
             $(monthlySelectBtn).on('click', function() {
+                buttonSlide.prop('checked', true);
                 $(this).addClass('active').parent('.nav-item').siblings().children().removeClass('active');
                 monthlyPrice.css('display', 'block');
                 yearlyPrice.css('display', 'none');
 
             });
-            
+
             $(yearlySelectBtn).on('click', function() {
+                buttonSlide.prop('checked', false);
                 $(this).addClass('active').parent('.nav-item').siblings().children().removeClass('active');
                 monthlyPrice.css('display', 'none');
                 yearlyPrice.css('display', 'block');
+            });
+
+            $(buttonSlide).change(function() {
+                if ($('input[id="pricing-checkbox"]:checked').length > 0) {
+                    monthlySelectBtn.addClass('active');
+                    yearlySelectBtn.removeClass('active');
+                    monthlyPrice.css('display', 'block');
+                    yearlyPrice.css('display', 'none');
+
+                }else {
+                    yearlySelectBtn.addClass('active');
+                    monthlySelectBtn.removeClass('active');
+                    monthlyPrice.css('display', 'none');
+                    yearlyPrice.css('display', 'block');
+
+                }
             });
         },
 
@@ -355,7 +335,7 @@
                     $('.services-grid.active, .counterup-progress.active, .testimonial-grid.active, .pricing-table.active, .brand-grid.active, .blog-list.active, .about-quality.active, .team-grid.active, .splash-hover-control.active').removeClass('active');
                     $(self).addClass('active');
                 }, 0);
-                
+
             });
         },
 
@@ -382,128 +362,6 @@
                     if ($window.scrollTop() >= totalDistance ) {
                         fixedElem.removeAttr('style');
                     }
-                });
-            }
-        },
-
-        blogModalActivation : function () {
-
-            var modalBox = $('.op-blog-modal');
-            var blogList = $('.blog-list');
-            var modalClose = modalBox.find('.close');
-
-            if ($('body').hasClass('onepage-template')) {
-                
-                blogList.each(function() {
-                    
-                    var $this = $(this);
-                    var buttons = $this.find('.post-thumbnail a, .title a, .more-btn');
-                    var mainImg = $this.find('.modal-thumb');
-                    var title = $this.find('.title');
-                    var paragraph = $this.find('.post-content p');
-                    var socialShare = $this.find('.blog-share');
-                    
-                    buttons.on('click', function(e){
-                        $('body').addClass('op-modal-open');
-                        modalBox.addClass('open');
-                        mainImg.clone().appendTo('.op-modal-content .post-thumbnail');
-                        title.clone().appendTo('.op-modal-content .post-content');
-                        paragraph.clone().appendTo('.op-modal-content .post-content');
-                        socialShare.clone().appendTo('.op-modal-content .post-content');
-                        e.preventDefault();
-                        
-                    })
-                    
-                });
-                
-                modalClose.on('click', function(e) {
-                    $('body').removeClass('op-modal-open');
-                    modalBox.removeClass('open');
-                    modalBox.find('.op-modal-content .post-content').html('');
-                    modalBox.find('.op-modal-content .post-thumbnail').html('');
-                    e.preventDefault();
-                });
-
-                $('#onepagenav li a').on('click', function() {
-                    var popupMenuWrap = $('#mobilemenu-popup .mobile-menu-close, .header-offcanvasmenu .btn-close');
-                    if ($('#mobilemenu-popup, .header-offcanvasmenu').hasClass('offcanvas')) {
-                        popupMenuWrap.trigger('click');
-                        
-                    }
-                });
-            }
-        },
-
-        portfolioModalActivation : function () {
-            
-            var modalBox = $('.op-portfolio-modal');
-            var projectList = $('.project-grid');
-            var modalClose = modalBox.find('.close');
-
-            if ($('body').hasClass('onepage-template')) {
-                
-                projectList.each(function() {
-                    
-                    var $this = $(this);
-                    var buttons = $this.find('.thumbnail a, .title a');
-                    var mainImg = $this.find('.thumbnail .modal-thumb');
-                    var title = $this.find('.title');
-                    var paragraph = $this.find('.content p');
-                    var socialShare = $this.find('.project-share');
-                    buttons.on('click', function(e){
-                        $('body').addClass('op-modal-open');
-                        modalBox.addClass('open');
-                        mainImg.clone().appendTo('.op-modal-content .portfolio-thumbnail');
-                        title.clone().appendTo('.op-modal-content .portfolio-content');
-                        paragraph.clone().appendTo('.op-modal-content .portfolio-content');
-                        socialShare.clone().appendTo('.op-modal-content .portfolio-content');
-                        e.preventDefault();
-                        
-                    })
-                    
-                });
-                
-                modalClose.on('click', function(e) {
-                    $('body').removeClass('op-modal-open');
-                    modalBox.removeClass('open');
-                    modalBox.find('.op-modal-content .portfolio-content').html('');
-                    modalBox.find('.op-modal-content .portfolio-thumbnail').html('');
-                    e.preventDefault();
-                });
-            }
-        },
-
-        caseModalActivation : function () {
-            
-            var modalBox = $('.op-case-modal');
-            var caseList = $('.case-study-featured');
-            var modalClose = modalBox.find('.close');
-
-            if ($('body').hasClass('onepage-template')) {
-                
-                caseList.each(function() {
-                    
-                    var $this = $(this);
-                    var buttons = $this.find('.axil-btn');
-                    var title = $this.find('.title');
-                    var paragraph = $this.find('.section-heading p');
-
-                    buttons.on('click', function(e){
-                        $('body').addClass('op-modal-open');
-                        modalBox.addClass('open');
-                        title.clone().appendTo('.op-modal-content .case-content');
-                        paragraph.clone().appendTo('.op-modal-content .case-content');
-                        e.preventDefault();
-                        
-                    })
-                    
-                });
-                
-                modalClose.on('click', function(e) {
-                    $('body').removeClass('op-modal-open');
-                    modalBox.removeClass('open');
-                    modalBox.find('.op-modal-content .case-content').html('');
-                    e.preventDefault();
                 });
             }
         },
