@@ -1,1 +1,1 @@
-<p>{!! $content !!}</p>
+<p style="text-align: justify;">{!! $content !!}</p>

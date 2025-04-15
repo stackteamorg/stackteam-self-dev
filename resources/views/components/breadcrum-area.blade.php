@@ -11,7 +11,7 @@
             <h1 class="title h2">{{ $title }}</p>
             @endif
             @if(isset($description))
-            <p class="description">{{ $description }}</p>
+            <p class="description" style="text-align: justify;">{{ $description }}</p>
             @endif
         </div>
     </div>

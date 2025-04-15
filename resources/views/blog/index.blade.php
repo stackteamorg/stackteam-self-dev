@@ -7,6 +7,11 @@
         @else
             <li class="active"><i class="fa-duotone fa-solid fa-hashtag"></i> بلاگ </li>
         @endif
+        @if(isset($category))
+        <x-slot name="description">
+            {{ $category->description }}
+        </x-slot>
+        @endif
     </x-breadcrum-area>
 
 <!--=====================================-->
