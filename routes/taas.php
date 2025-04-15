@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Brief;
 use App\Http\Controllers\CallActionController;
+use App\Http\Controllers\Customer;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TechnologyController;
@@ -22,4 +23,7 @@ Route::get('/technology/{name}/{slug}', [TechnologyController::class, 'show'])->
 
 Route::get('/process', ProcessController::class)->name('process');
 Route::get('/about', AboutController::class)->name('about');
+
+Route::get('/c/{id}', Customer::class)->name('customer');
+
 
